@@ -1,0 +1,192 @@
+@import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
+
+.cardplan {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 24px 80px;
+  border-radius: 24px;
+  border: 1px solid #2c2c2c;
+  background: $color-black-bg;
+
+  @include onPhone {
+    border-radius: 8px;
+    padding: 14px 24px;
+  }
+
+  &-yellow {
+    @include onPhone {
+      border: 1px solid #eefd94;
+      box-shadow: 0px 4px 60px 0px rgba(190, 251, 156, 0.10);
+    }
+
+    &:hover {
+      border: 1px solid #eefd94;
+      box-shadow: 0px 4px 60px 0px rgba(190, 251, 156, 0.10);
+    }
+  }
+
+  &-blue {
+    @include onPhone {
+      border: 1px solid #94cbfd;
+      box-shadow: 0px 4px 60px 0px rgba(144, 225, 241, 0.10);
+    }
+
+    &:hover {
+      border: 1px solid #94cbfd;
+      box-shadow: 0px 4px 60px 0px rgba(144, 225, 241, 0.10);
+    }
+  }
+
+  &-purple {
+    @include onPhone {
+      border: 1px solid #a394fd;
+      box-shadow: 0px 4px 60px 0px rgba(204, 144, 251, 0.10);
+    }
+    
+    &:hover {
+      border: 1px solid #a394fd;
+      box-shadow: 0px 4px 60px 0px rgba(204, 144, 251, 0.10);
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+
+    &-yellow {
+      background: linear-gradient(90deg, #EEFD94 -0.6%, #8CF8A4 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-blue {
+      background: linear-gradient(90deg, #94CBFD -0.6%, #8CF8E5 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-purple {
+      background: linear-gradient(90deg, #A394FD -0.6%, #F68CF8 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__price {
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+
+    @include onPhone {
+      font-size: 28px;
+    }
+  }
+
+  &__period {
+    color: #9D9D9D;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__button {
+    width: 317px;
+    height: 52px;
+
+    @include onPhone {
+      max-width: 310px;
+      height: 48px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include onPhone {
+      gap: 21px;
+    }
+  }
+
+  &__option {
+    position: relative;
+    color: #fafafa;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -33px;
+      transform: translateY(-50%);
+      background-image: url('../../assets/images/check_ring_round.svg');
+      width: 25px;
+      height: 25px;
+
+      @include onPhone {
+        left: -30px;
+        background-image: url('../../assets/images/check_ring_round_mobile.svg');
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    @include onPhone {
+      font-size: 14px;
+    }
+  }
+
+  &__option-false {
+    display: none;
+    position: relative;
+    color: #9d9d9d;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -33px;
+      transform: translateY(-50%);
+      background-image: url('../../assets/images/close_ring_duotone_line.svg');
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__readmore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+
+    &-link {
+      align-self: flex-end;
+      align-content: end;
+      color: #9D9D9D;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      text-decoration-line: underline;
+    }
+  }
+}

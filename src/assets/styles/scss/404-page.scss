@@ -1,0 +1,55 @@
+.notfound-page {
+  margin: 0;
+  padding: 0;
+  background-image: url('../../images/error_page.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+  background-attachment: scroll;
+  height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 110px;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 248px;
+    font-style: normal;
+    font-weight: 700;
+    background: var(--gradient-2, linear-gradient(90deg, #94CBFD -0.6%, #8CF8E5 101.11%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../../images/kapybara.svg');
+      top: -132px;
+      left: 100px;
+      width: 462px;
+      height: 339px;
+      transform: rotate(-3.71deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__title.shaking::after {
+    transform: rotate(-5deg); /* Применяем вращение при наведении мыши */
+  }
+
+  &__text {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+}

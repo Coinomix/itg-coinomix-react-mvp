@@ -1,0 +1,47 @@
+@import '../../assets/styles/scss/mixins';
+
+.cardtags {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: stretch;
+
+  &__tags {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    @include onPhone {
+      gap: 8px;
+    }
+  }
+
+  &__tagname {
+    display: flex;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 22px;
+    border: 1px solid #FAFAFA;
+    color: #FAFAFA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1em;
+    text-decoration: none;
+
+    @include onPhone {
+      font-size: 12px;
+    }
+  }
+
+  &__arrowicon {
+    width: 32px;
+    height: 32px;
+
+    @include onPhone {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

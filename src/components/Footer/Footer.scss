@@ -1,0 +1,108 @@
+@import '../../assets/styles/scss/mixins';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+
+  @include onPhone {
+    padding: 14px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include onPhone {
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    &-mobile {
+      @include onPhone {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;    
+    gap: 20px;
+    margin-right: 10px;
+    height: 38px;
+
+    @include onPhone {
+      gap: 48px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    width: 34px;
+    height: 34px;
+  }
+
+  &__copyrights {
+    color: #888;
+    font-size: 20px;
+    line-height: 18px; /* 90% */
+
+    @include onPhone {
+      font-size: 12px;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 56px;
+
+    @include onPhone {
+      flex-direction: column;
+      align-items: center;
+      gap: 34px;
+    }
+  }
+
+  &__link {
+    color: #888;
+    font-size: 20px;
+    line-height: 18px; /* 90% */
+    text-decoration: none;
+
+    @include onPhone {
+      font-size: 16px;
+    }
+
+    &:link {
+      color: #888;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: #888;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #888;
+      text-decoration: none;
+    }
+
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../assets/styles/scss/mixins';
+
+.cryptostring {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid #2C2C2C;
+  background: #0F0F0F;
+
+  &__container {
+    border-radius: 8px;
+    background: linear-gradient(90deg, #0F0F0F 0%, rgba(15, 15, 15, 0.00) 6.25%, rgba(15, 15, 15, 0.00) 94.27%, #0F0F0F 100%);
+    z-index: 2;
+  }
+
+  &__text {
+    margin: 16px 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #fafafa;
+    z-index: 1;
+
+    white-space: nowrap; /* Запрещаем перенос текста */
+    animation: run-text 30s linear infinite; /* Запускаем анимацию */
+
+    @include onPhone {
+      margin: 12px 0;
+      font-size: 10px;
+    }
+  }
+}
+
+@keyframes run-text {
+  0% {
+    transform: translateX(100%); /* Начальное положение текста - справа за границей контейнера */
+  }
+  100% {
+    transform: translateX(-100%); /* Конечное положение текста - слева за границей контейнера */
+  }
+}

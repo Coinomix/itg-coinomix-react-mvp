@@ -1,0 +1,126 @@
+@import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
+
+.custombutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 8px;
+
+  &__signin {
+    border: 0;
+    background: #FAFAFA;
+
+    &:hover {
+      background: #DEDEDE;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+  }
+
+  &__signup {
+    border: 1px solid #FAFAFA;
+    background: transparent;
+    color: #FAFAFA;
+
+    &:hover {
+      background: #FAFAFA;
+      color: #0F0F0F;
+      cursor: pointer;
+    }
+  }
+
+  &__facebook {
+    border: 0;
+    background: #1877F2;
+    color: #FAFAFA;
+    cursor: pointer;
+
+    &-image {
+      background-image: url('../../assets/images/facebook_icon.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__google {
+    border: 0;
+    background: #FAFAFA;
+
+    &:hover {
+      background: #DEDEDE;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+
+    &-image {
+      background-image: url('../../assets/images/google_icon.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__apple {
+    border: 0;
+    background: #181818;
+    color: #FAFAFA;
+    cursor: pointer;
+
+    &:hover {
+      background: #2c2c2c;
+    }
+
+    &-image {
+      background-image: url('../../assets/images/apple_icon.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__subscribe-blue {
+    border: 0;
+    background: linear-gradient(90deg, #94CBFD -0.6%, #8CF8E5 101.11%);
+    color: #0F0F0F;
+
+    &:hover {
+      box-shadow: 0px 0px 30px 0px rgba(144, 225, 241, 0.25);
+      cursor: pointer;
+    }
+  }
+
+  &__subscribe-yellow {
+    border: 0;
+    background: linear-gradient(90deg, #EEFD94 -0.6%, #8CF8A4 101.11%);
+    color: #0F0F0F;
+
+    &:hover {
+      box-shadow: 0px 0px 30px 0px rgba(190, 251, 156, 0.25);
+      cursor: pointer;
+    }
+  }
+
+  &__subscribe-purple {
+    border: 0;
+    background: linear-gradient(90deg, #A394FD -0.6%, #F68CF8 101.11%);
+    color: #0F0F0F;
+
+    &:hover {
+      box-shadow: 0px 0px 30px 0px rgba(204, 144, 251, 0.25);
+      cursor: pointer;
+    }
+  }
+}

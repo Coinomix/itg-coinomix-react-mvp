@@ -1,0 +1,98 @@
+@import '../../assets/styles/scss/mixins';
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    padding: 28px 40px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(100px) brightness(100%);
+    backdrop-filter: blur(100px) brightness(100%);
+    background-color: rgba(15, 15, 15, 0.2);
+    
+    @include onPhone {
+      padding: 20px 14px;
+    }
+  
+    &__burger {
+      height: 48px;
+      width: 48px;
+      padding: 0;
+      background-color: transparent;
+      background-image: url('../../assets/images/header/burger.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+
+      @include onPhone {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    &__logo {
+      width: 200px;
+      height: 30px;
+
+      @include onPhone {
+        width: 148px;
+        height: 22px;
+      }
+    }
+
+    &__user {
+      width: 48px;
+      height: 48px;
+      padding: 4px;
+
+      @include onPhone {
+        width: 34px;
+        height: 34px;
+        padding: 2px;
+      }
+    }
+
+    &__user-photo {
+        height: 40px;
+        width: 40px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+
+        @include onPhone {
+          width: 28px;
+          height: 28px;
+          border: 1px solid transparent;
+        }
+
+        &:hover {
+          border-color: #94CBFD #8CF8E5 #8CF8E5 #94CBFD;
+          cursor: pointer;
+        }
+
+        @include onPhone {
+          width: 34px;
+          height: 34px;
+        }
+      }
+  
+    &__no-user {
+        height: 48px;
+        width: 48px;
+        background-image: url('../../assets/images/header/no_user.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+
+        @include onPhone {
+          width: 34px;
+          height: 34px;
+        }
+      }
+  }
+  

@@ -1,0 +1,131 @@
+@import '../../assets/styles/scss/mixins';
+
+.latestnews {
+  padding: 22px 10px 22px 0;
+  border-radius: 22px;
+  border: 2px solid #2c2c2c;
+  background: #0f0f0f;
+
+  @include onPhone {
+    padding: 18px 10px 18px 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    row-gap: 18px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    padding: 0 32px;
+    margin-bottom: 22px;
+    box-sizing: border-box;
+
+    @include onPhone {
+      padding: 0 8px 0 18px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &__title {
+    color: #fafafa;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+  }
+
+  &__arrowicon {
+    width: 32px;
+    height: 32px;
+
+    @include onPhone {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 0 32px;
+    overflow: auto;
+    max-height: 455px;
+
+    @include onPhone {
+      padding: 0 18px;
+      max-height: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px; /* Ширина скроллбара */
+
+      &-thumb {
+        background-color: #2c2c2c; /* Цвет ползунка */
+        border-radius: 4px;
+  
+        &:hover {
+          background-color: #888;
+        }
+      }
+
+      &-track {
+        background-color: #0f0f0f; /* Цвет трека */
+      }
+
+      &-button {
+        display: none; /* Скрываем кнопки */
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
+    gap: 14px;
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-title {
+      color: #fafafa;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      @include onPhone {
+        font-size: 18px;
+      }
+    }
+
+    &-description {
+      color: #9D9D9D;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      @include onPhone {
+        font-size: 14px;
+      }
+    }
+
+    &-hr {
+      width: 100%;
+      height: 1px;
+      background: #2c2c2c;
+    }
+  }
+}

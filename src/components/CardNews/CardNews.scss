@@ -1,0 +1,122 @@
+@import '../../assets/styles/scss/mixins';
+
+.cardnews {
+  position: relative;
+  overflow: hidden;
+  height: 564px;
+  border-radius: 22px;
+  border: 2px solid #2C2C2C;
+  background: linear-gradient(91deg, #6F55B4 0%, #DB45D1 100%);
+
+  @include onPhone {
+    height: 384px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 32px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%);
+
+    @include onPhone {
+      padding: 18px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__title {
+    width: 50%;
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    &-top {
+      width: 100%;
+    }
+
+    &-link {
+      color: #FAFAFA;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-decoration: none;
+
+      @include onPhone {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    @include onPhone {
+      justify-content: space-between;
+      gap: 0;
+      font-size: 12px;
+      width: 100%;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    &-content {
+      display: flex;
+      align-items: center;
+      color: #FAFAFA;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

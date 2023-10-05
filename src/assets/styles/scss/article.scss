@@ -1,0 +1,41 @@
+.article {
+  &__content {
+    max-width: 1100px;
+    color: #FAFAFA;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 80px;
+
+    &-text {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    border-radius: 22px;
+    border: 2px solid #2C2C2C;
+    background: #181818;
+
+    &-text {
+      color: #FAFAFA;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    &-button {
+      display: flex;
+      width: 200px;
+      height: 52px;
+    }
+  }
+}

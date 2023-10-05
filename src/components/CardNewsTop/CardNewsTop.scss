@@ -1,0 +1,176 @@
+@import '../../assets/styles/scss/mixins';
+
+.cardnewstop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 22px;
+  border: 2px solid #2C2C2C;
+  background: #0F0F0F;
+
+  @include onPhone {
+    padding: 18px;
+  }
+
+  &__left {
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    height: 516px;
+    border-radius: 22px;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  &__tags {
+    position: relative;
+    z-index: 1;
+    padding: 32px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%);
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:24px;
+    flex: 1 0 0;
+    min-height: 516px;
+    overflow: hidden;
+
+    @include onPhone {
+      min-height: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 26px;
+  }
+
+  &__title {
+    color: #FAFAFA;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+
+    @include onPhone {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    color: #999;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 164%;
+
+    @include onTablet {
+      font-size: 18px;
+    }
+
+    @include onPhone {
+      font-size: 14px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  } 
+
+  &__author-photo {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    @include onTablet {
+      width: 52px;
+      height: 52px;
+    }
+
+    @include onPhone {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  &__author-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  &__author-link {
+    color: #FAFAFA;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onPhone {
+      font-size: 12px;
+    }
+  }
+
+  &__date {
+    color: #999;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onPhone {
+      font-size: 12px;
+    }
+  }
+}

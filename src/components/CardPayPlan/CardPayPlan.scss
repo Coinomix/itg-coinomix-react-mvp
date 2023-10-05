@@ -1,0 +1,167 @@
+@import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
+
+.cardpayplan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+
+  &__blocktitle {
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 20px 0;
+
+    @include onPhone {
+      font-size: 28px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+
+    &-yellow {
+      background: linear-gradient(90deg, #EEFD94 -0.6%, #8CF8A4 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-blue {
+      background: linear-gradient(90deg, #94CBFD -0.6%, #8CF8E5 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-purple {
+      background: linear-gradient(90deg, #A394FD -0.6%, #F68CF8 101.11%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__price {
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+
+    @include onPhone {
+      font-size: 28px;
+    }
+  }
+
+  &__period {
+    color: $color-gray;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__paybuttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__button {
+    width: 100%;
+    height: 52px;
+
+    @include onPhone {
+      height: 48px;
+    }
+  }
+
+  &__orblock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  &__hr {
+    width: 100%;
+    height: 1px;
+    background: $color-gray;
+  }
+
+  &__or {
+    color:  $color-gray;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__form {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-gray;
+  }
+
+  &__label {
+    margin-left: 14px;
+  }
+
+  &__exp {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-gray;
+    margin-top: 12px;
+  }
+
+  &__input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid $color-gray;
+    background: transparent;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-white;
+    width: 100%;
+    margin-top: 4px;
+    outline: none;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      border: 1px solid $color-white;
+    }
+
+    &::placeholder {
+      color: $color-gray;
+    }
+  }
+}

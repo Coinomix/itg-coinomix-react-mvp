@@ -1,0 +1,98 @@
+@import './mixins';
+
+.subscribe-page {
+  width: 100%;
+  padding: 110px 40px 0;
+
+  @include onTablet {
+    padding: 110px 20px 0;
+  }
+
+  @include onPhone {
+    padding: 72px 14px 0;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 24px;
+    border: 2px solid #2C2C2C;
+    background: #0F0F0F;
+
+    @include onPhone {
+      border: 0;
+    }
+  }
+
+  &__payed {
+    max-width: 420px;
+    margin: 20px 0 60px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 20px 0;
+
+    @include onPhone {
+      font-size: 28px;
+      margin: 18px 0;
+    }
+  }
+
+  &__cancel {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    @include onPhone {
+      font-size: 14px;
+      margin: 18px 0;
+    }
+  }
+
+  &__plantoggler {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0;
+  }
+
+  &__plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 0 60px;
+  }
+
+  &__cardpayplan {
+    max-width: 420px;
+    margin-bottom: 60px;
+
+    @include onPhone {
+      width: 100%;
+      padding: 0 14px;
+    }
+  }
+}

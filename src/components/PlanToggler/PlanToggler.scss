@@ -1,0 +1,33 @@
+@import '../../assets/styles/scss/variables';
+@import '../../assets/styles/scss/mixins';
+
+.plantoggler {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 24px;
+  background: $color-dark-gray;
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    color: $color-white;
+    cursor: pointer;
+
+    @include onPhone {
+      font-size: 14px;
+    }
+  } 
+
+  &__active {
+    border-radius: 24px;
+    background: $color-white;
+    color: $color-black-bg;
+  }
+}

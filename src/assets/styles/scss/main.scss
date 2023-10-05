@@ -1,0 +1,208 @@
+@import '../scss/mixins';
+
+.main {
+  margin: 0 40px;
+
+  @include onTablet {
+    margin: 0 20px;
+  }
+
+  @include onPhone {
+    margin: 0 14px;
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: center;
+
+    &-container {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 32px;
+      border-radius: 22px;
+      border: 1px solid;
+      border-color: #94CBFD #8CF8E5 #8CF8E5 #94CBFD;
+      background: #1A1A1A;
+      margin-bottom: 56px;
+      margin-top: 24px;
+      
+      &:hover {
+        box-shadow: 0px 4px 60px 0px rgba(146, 228, 246, 0.10);
+      }
+    }
+
+    &-link {
+      padding: 0 16px;
+      color: #888;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      @include onPhone {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: #FAFAFA;
+      }
+    }
+
+    &-active {
+      color: #FAFAFA;
+    }
+  }
+
+  &__container {
+    padding-top: 124px;
+  
+    @include onPhone {
+      padding-top: 80px;
+    }
+
+    &-latestnews {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 20px;
+
+      @include onTablet {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__section {  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 120px 0 80px;
+
+    @include onPhone {
+      margin: 84px 0 44px;
+    }
+    
+    &-title {
+      position: relative;
+      color: #FAFAFA;
+      font-size: 42px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-left: 16px;
+
+      @include onPhone {
+        font-size: 28px;
+        padding-left: 8px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 32px;
+        background: #F3BA2F;
+        top: 50%;
+        left: - 1px;
+        transform: translateY(-50%);
+
+        @include onPhone {
+          width: 2px;
+          height: 21px;
+        }
+      }
+    }
+
+    &-readmore {
+      position: relative;
+      color: #FAFAFA;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration: none;
+
+      @include onPhone {
+        font-size: 14px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #FAFAFA;
+        border-radius: 2px;
+        bottom: -4px;
+        right: 0;
+        transition: width 0.3s ease-out;
+
+        @include onPhone {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: #FAFAFA;
+          border-radius: 2px;
+          bottom: -4px;
+          right: 0px;
+          animation: underlineExpand 0.5s forwards;
+        }
+      }
+
+      &:not(:hover) {
+        &:after {
+          animation: underlineShrink 0.3s forwards;
+        }
+      }
+
+      @keyframes underlineExpand {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%; /* Увеличиваем ширину до 100% */
+        }
+      }
+  
+      @keyframes underlineShrink {
+        0% {
+          width: 100%;
+        }
+        100% {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  &__macroeconomics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+
+    @include onTablet {
+      flex-wrap: wrap;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+}

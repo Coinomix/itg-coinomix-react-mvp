@@ -1,0 +1,39 @@
+.block-joinus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  // width: 600px;
+  min-height: 250px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 2px solid #2C2C2C;
+  background: linear-gradient(97deg, #162825 0%, rgba(0, 0, 0, 0.00) 100%), #000;
+
+  &__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    margin-top: 14px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__subcribe {
+    width: 148px;
+  }
+}
