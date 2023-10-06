@@ -1,25 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CardLatestNews.scss';
-import { Article } from '../../types/articleType';
+import { ArticleData } from '../../types/articleType';
 import { formateDate } from '../../utils/helpers';
+import imgDemo from '../../assets/images/demo/bitcoin.jpg';
 
 interface Props {
-  article: Article;
+  article: ArticleData;
 }
 
 export const CardLatestNews: React.FC<Props> = ({ article }) => {
+  const articleData = article.attributes;
+  const articleUrl = `/${articleData.categories.data[0].attributes.slug}/${articleData.slug}`;
+
   return (
     <div className='card-latest-news'>
       <div className='card-latest-news__content'>
         <div className='card-latest-news__header'>
           <div className='card-latest-news__author'>
-              <span className='card-latest-news__author-link'>by {article.attributes.author.data.attributes.name}</span>
-              <p className='card-latest-news__author-date'>{formateDate(article.attributes.publish_date)}</p>
+              <span className='card-latest-news__author-link'>by {articleData.author.data.attributes.name}</span>
+              <p className='card-latest-news__author-date'>{formateDate(articleData.publish_date)}</p>
           </div>
 
           <div className='card-latest-news__tags'>
-          {article.attributes.categories.data.map((category) =>
+          {articleData.categories.data.map((category) =>
             <span key={category.id} className='card-latest-news__tagname'>{category.attributes.name}</span>
           )}
           </div>
@@ -27,17 +31,17 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
 
         <div className='card-latest-news__body'>
           <div className='card-latest-news__body-image'>
-            <Link to={article.attributes.slug}>
-              <img className='card-latest-news__image' src='../../assets/images/demo/bitcoin.jpg' alt='' />
+            <Link to={articleUrl}>
+              <img className='card-latest-news__image' src={imgDemo} alt='' />
             </Link>
           </div>
             <div className='card-latest-news__body-title'>
               <h3>
-                <Link to={article.attributes.slug} className='card-latest-news__title'>
-                  {article.attributes.title}
+                <Link to={articleUrl} className='card-latest-news__title'>
+                  {articleData.title}
                 </Link>
               </h3>
-              <Link to={article.attributes.slug} className='card-latest-news__viewmore' title='View more'>View more</Link>
+              <Link to={articleUrl} className='card-latest-news__viewmore' title='View more'>View more</Link>
             </div>
         </div>
         {/* <div className='card-latest-news__footer'>

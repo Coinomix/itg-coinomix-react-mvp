@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './BlockLatestNews.scss';
 import arrowIcon from '../../assets/images/arrow_icon.svg';
-import { Article } from '../../types/articleType';
+import { ArticleData } from '../../types/articleType';
 
 interface Props {
-  articles: Article[];
+  articles: ArticleData[];
 }
 
 export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
@@ -17,12 +17,12 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
           <img className='latestnews__arrowicon' src={arrowIcon} alt='Latest news icon' />
         </Link>
       </div>
-      
+
       <div className='latestnews__container'>
         {articles.map(article => {
           return (
             <div key={article.id} className='latestnews__item'>
-            <Link to='/article' className='latestnews__item-link'>
+            <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} className='latestnews__item-link'>
               <h3 className='latestnews__item-title'>{article.attributes.title}</h3>
             </Link>
             <p className='latestnews__item-description'>{article.attributes.description}</p>
@@ -31,7 +31,7 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
           )
         })}
       </div>
-      
+
     </div>
   );
 };

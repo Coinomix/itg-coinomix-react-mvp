@@ -5,14 +5,14 @@ import { PageTitle } from '../components/PageTitle';
 import { CardLatestNews } from '../components/CardLatestNews';
 import useTitle from '../utils/useTitle';
 import { CardBanner } from '../components/CardBanner';
-import bannerEpicurus from '../assets/images/banners/banner_epicurus.svg';
+import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import { BallTriangle } from 'react-loader-spinner';
-import { Article } from '../types/articleType';
+import { ArticleData } from '../types/articleType';
 import { getArticlesSortedByDate } from '../utils/api_helpers';
 
 const LatestNewsPage = () => {
-  const [articles, setArticles] = React.useState<Article[]>([]);
+  const [articles, setArticles] = React.useState<ArticleData[]>([]);
   const [isLoading, seIsLoading] = React.useState(true);
 
   useTitle('Latest News Page | Coinomix');

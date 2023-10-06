@@ -10,17 +10,17 @@ import { CardNewsSmall } from '../components/CardNewsSmall';
 import { CardBanner } from '../components/CardBanner';
 import { Devider } from '../components/Devider';
 import { CardNewsType } from '../types/enums';
-import bannerEpicurus from '../assets/images/banners/banner_epicurus.svg';
+import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import imgBitcoin from '../assets/images/demo/bitcoin.jpg';
 import imgLaptopThree from '../assets/images/demo/laptop_3.jpg';
 import useTitle from '../utils/useTitle';
-import { Article } from '../types/articleType';
-import { BallTriangle } from 'react-loader-spinner';
+import { ArticleData } from '../types/articleType';
 import { getArticlesSortedByDate } from '../utils/api_helpers';
+import { Loader } from '../components/Loader';
 
 export const HomePage = () => {
-  const [articles, setArticles] = React.useState<Article[]>([]);
+  const [articles, setArticles] = React.useState<ArticleData[]>([]);
   const [isLoading, seIsLoading] = React.useState(true);
 
   useTitle('Home Page | Coinomix');
@@ -40,8 +40,8 @@ export const HomePage = () => {
   const topNewsData = () => {
     const topNewsDataApi = articles.find(article => article.attributes.top_home);
 
-    return topNewsDataApi ? topNewsDataApi : articles[0];
-  }
+    return topNewsDataApi ? topNewsDataApi.attributes : articles[0].attributes;
+  };
 
   React.useEffect(() => {
     scrollToTop();
@@ -50,18 +50,7 @@ export const HomePage = () => {
 
   if (isLoading) {
     return (
-      <div className="loader">
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="#94CBFD"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass=''
-          wrapperStyle={{}}
-          visible={true}
-        />
-      </div>
+      <Loader />
     )
   };
 

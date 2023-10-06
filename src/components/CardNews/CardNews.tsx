@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import { CardTags } from '../CardTags';
 import { CardNewsType } from '../../types/enums';
 import { Link } from 'react-router-dom';
-import { Article } from '../../types/articleType';
+import { ArticleAttributes } from '../../types/articleType';
 import { formateDate } from '../../utils/helpers';
 
 interface Props {
   imgUrl?: string;
   type?: CardNewsType;
-  article: Article;
+  article: ArticleAttributes;
 }
 
 export const CardNews: React.FC<Props> = ({
@@ -19,10 +19,10 @@ export const CardNews: React.FC<Props> = ({
   article,
 }) => {
 
-  const publishData = formateDate(article.attributes.publish_date);
+  const publishData = formateDate(article.publish_date);
 
   return (
-    <Link to={article.attributes.slug} >
+    <Link to={`/${article.categories.data[0].attributes.slug}/${article.slug}`} >
       <div className='cardnews' style={{ height: type }}>
         {imgUrl && (
           <img
@@ -33,14 +33,14 @@ export const CardNews: React.FC<Props> = ({
         )}
         <div className='cardnews__content'>
           <div className='cardnews__header'>
-            <CardTags categories={article.attributes.categories.data} />
+            <CardTags categories={article.categories.data} />
 
             <div className={classNames('cardnews__title', {
             'cardnews__title-top': type === CardNewsType.top,
           })}>
 
-              <Link to={article.attributes.slug} className='cardnews__title-link'>
-                {article.attributes.title}
+              <Link to={article.slug} className='cardnews__title-link'>
+                {article.title}
               </Link>
             </div>
           </div>
@@ -48,7 +48,7 @@ export const CardNews: React.FC<Props> = ({
           <div className='cardnews__footer'>
             <ul className='cardnews__author'>
               <li>
-                <span className='cardnews__author-link'>{`by ${article.attributes.author.data.attributes.name}`}</span>
+                <span className='cardnews__author-link'>{`by ${article.author.data.attributes.name}`}</span>
               </li>
               <li>{publishData}</li>
             </ul>

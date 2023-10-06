@@ -4,13 +4,13 @@ import './PageTitle.scss'
 
 
 interface Props {
-  title: string;
+  title?: string;
   breadcrumbsTitle: string;
   breadcrumbsUrl?: string;
 };
 
 export const PageTitle: React.FC <Props> = ({
-  title,
+  title = '',
   breadcrumbsTitle,
   breadcrumbsUrl = '',
 }) => {

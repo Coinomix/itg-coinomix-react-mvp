@@ -1,12 +1,12 @@
 import React from 'react';
 import './CardNewsSmall.scss';
 import { CardTags } from '../CardTags';
-import { Article } from '../../types/articleType';
+import { ArticleData } from '../../types/articleType';
 import { Link } from 'react-router-dom';
 
 interface Props {
   imgUrl?: string;
-  article: Article;
+  article: ArticleData;
 }
 
 export const CardNewsSmall: React.FC<Props> = ({
@@ -14,7 +14,7 @@ export const CardNewsSmall: React.FC<Props> = ({
   article,
 }) => {
   return (
-    <Link to={article.attributes.slug} >
+    <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} >
       <div className='cardnews-small'>
         {imgUrl && (
           <img
