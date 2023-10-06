@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 const API_KEY = process.env.STRAPI_API_TOKEN;
-// const API_URL = `https://good-food-strapi.onrender.com/api`;
-const API_URL = 'http://localhost:1337/api';
+const API_URL = 'https://strapi-deployment-9fmb.onrender.com/api';
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
@@ -17,7 +16,7 @@ function request<T>(
     options.body = JSON.stringify(data);
     options.headers = {
       'Content-Type': 'application/json; charset=UTF-8',
-      // 'Authorization': `Bearer ${API_KEY}`,
+      'Authorization': `Bearer ${API_KEY}`,
     };
   }
 

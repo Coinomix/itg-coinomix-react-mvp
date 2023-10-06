@@ -1,3 +1,7 @@
+export interface ArticleData {
+  data: Article[];
+}
+
 export interface Article {
   id: number;
   attributes: {
@@ -7,19 +11,10 @@ export interface Article {
     slug: string;
     top_home: boolean;
     publishedAt: string;
-    locale: string
+    publish_date: string;
+    locale: string;
     categories: {
-      data: [
-        {
-          id: number,
-          attributes: {
-            name: string;
-            slug: string;
-            description: string;
-            locale: string;
-          }
-        }
-      ]
+      data: ArticleCaregory[];
     }
     author: {
       data: {
@@ -30,5 +25,15 @@ export interface Article {
         }
       }
     };
+  }
+}
+
+export interface ArticleCaregory {
+  id: number,
+  attributes: {
+    name: string;
+    slug: string;
+    description: string;
+    locale: string;
   }
 }

@@ -13,7 +13,7 @@ export const CardNewsTop = () => {
             className='cardnewstop__image'
           />
         <div className='cardnewstop__tags'>
-          <CardTags isArrow={false} />
+          {/* <CardTags isArrow={false} /> */}
         </div>
       </div>
       <div className='cardnewstop__right'>

@@ -14,20 +14,56 @@ import bannerEpicurus from '../assets/images/banners/banner_epicurus.svg';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import imgBitcoin from '../assets/images/demo/bitcoin.jpg';
 import imgLaptopThree from '../assets/images/demo/laptop_3.jpg';
-import imgLaptopFour from '../assets/images/demo/laptop_4.jpg';
-import imgDemoOne from '../assets/images/demo/demo_1.jpg';
 import useTitle from '../utils/useTitle';
+import { Article } from '../types/articleType';
+import { BallTriangle } from 'react-loader-spinner';
+import { getArticlesSortedByDate } from '../utils/api_helpers';
 
 export const HomePage = () => {
+  const [articles, setArticles] = React.useState<Article[]>([]);
+  const [isLoading, seIsLoading] = React.useState(true);
+
   useTitle('Home Page | Coinomix');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const loadData = async () => {
+    const articlesDataApi = await getArticlesSortedByDate();
+
+    setArticles(articlesDataApi.data);
+
+    seIsLoading(false);
+  };
+
+  const topNewsData = () => {
+    const topNewsDataApi = articles.find(article => article.attributes.top_home);
+
+    return topNewsDataApi ? topNewsDataApi : articles[0];
+  }
+
   React.useEffect(() => {
     scrollToTop();
+    loadData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loader">
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="#94CBFD"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass=''
+          wrapperStyle={{}}
+          visible={true}
+        />
+      </div>
+    )
+  };
 
   return (
     <>
@@ -35,12 +71,15 @@ export const HomePage = () => {
 
       <main className='main'>
         <div className='main__container'>
-          <div className='main__container-latestnews'>
-            <div>
-              <CardNews type={CardNewsType.top} imgUrl={imgBitcoin} />
+          <div className='main__topblock'>
+            <div className='main__topnews'>
+              <CardNews type={CardNewsType.top} imgUrl={imgBitcoin} article={topNewsData()} />
             </div>
 
-            <BlockLatestNews />
+            <div className='main__latestnews'>
+              <BlockLatestNews articles={articles} />
+            </div>
+
           </div>
 
           <Devider />
@@ -58,10 +97,10 @@ export const HomePage = () => {
 
           <Devider />
 
-          <div className='main__container-latestnews'>
-            <CardNewsSmall imgUrl={imgLaptopThree} />
-            <CardNewsSmall imgUrl={imgLaptopFour} />
-            <CardNewsSmall imgUrl={imgDemoOne} />
+          <div className='main__topblock'>
+            {articles.slice(0, 3).map((article) => 
+              <CardNewsSmall key={article.id} imgUrl={imgLaptopThree} article={article} />
+            )}
           </div>
 
           <Devider />         

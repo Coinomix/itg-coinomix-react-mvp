@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CardLatestNews.scss';
-import { Article } from '../../types/article';
+import { Article } from '../../types/articleType';
 import { formateDate } from '../../utils/helpers';
 
 interface Props {
@@ -14,15 +14,15 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
       <div className='card-latest-news__content'>
         <div className='card-latest-news__header'>
           <div className='card-latest-news__author'>
-              <a href='' className='card-latest-news__author-link'>by {article.attributes.author.data.attributes.name}</a>
-              <p className='card-latest-news__author-date'>{formateDate(article.attributes.publishedAt)}</p>
-              <p className='card-latest-news__author-date'>9:00 AM GMT</p>
+              <span className='card-latest-news__author-link'>by {article.attributes.author.data.attributes.name}</span>
+              <p className='card-latest-news__author-date'>{formateDate(article.attributes.publish_date)}</p>
           </div>
 
-          {/* <div className='card-latest-news__tags'>
-            <a href='#bitcoin' className='card-latest-news__tagname'># Bitcoin</a>
-            <a href='#beginners' className='card-latest-news__tagname'># Beginners</a>
-          </div> */}
+          <div className='card-latest-news__tags'>
+          {article.attributes.categories.data.map((category) =>
+            <span key={category.id} className='card-latest-news__tagname'>{category.attributes.name}</span>
+          )}
+          </div>
         </div>
 
         <div className='card-latest-news__body'>
@@ -37,7 +37,7 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
                   {article.attributes.title}
                 </Link>
               </h3>
-              <Link to='/article' className='card-latest-news__viewmore' title='View more'>View more</Link>
+              <Link to={article.attributes.slug} className='card-latest-news__viewmore' title='View more'>View more</Link>
             </div>
         </div>
         {/* <div className='card-latest-news__footer'>

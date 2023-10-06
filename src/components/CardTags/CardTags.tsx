@@ -1,17 +1,20 @@
 import React from 'react';
 import './CardTags.scss'
 import arrowIcon from '../../assets/images/arrow_icon.svg';
+import { ArticleCaregory } from '../../types/articleType';
 
 interface Props {
   isArrow?: boolean;
+  categories: ArticleCaregory[];
 }
 
-export const CardTags: React.FC<Props> = ({ isArrow = true }) => {
+export const CardTags: React.FC<Props> = ({ isArrow = true, categories }) => {
   return (
     <div className='cardtags'>
       <div className='cardtags__tags'>
-        {/* <a href='#bitcoin' className='cardtags__tagname'>Bitcoin</a>
-        <a href='#trading' className='cardtags__tagname'>Trading</a> */}
+        {categories.map((category) =>
+          <span key={category.id} className='cardtags__tagname'>{category.attributes.name}</span>
+        )}
       </div>
 
       {isArrow && (

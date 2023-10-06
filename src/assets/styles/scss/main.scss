@@ -61,16 +61,28 @@
     @include onPhone {
       padding-top: 80px;
     }
+  }
 
-    &-latestnews {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      gap: 20px;
+  &__topblock {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
 
-      @include onTablet {
-        flex-wrap: wrap;
-      }
+    @include onTablet {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__topnews {
+    width: 100%;
+  }
+
+  &__latestnews {
+    max-width: 600px;
+
+    @include onTablet {
+      max-width: 100%;
     }
   }
 

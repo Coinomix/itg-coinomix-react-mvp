@@ -8,8 +8,8 @@ import { CardBanner } from '../components/CardBanner';
 import bannerEpicurus from '../assets/images/banners/banner_epicurus.svg';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import { BallTriangle } from 'react-loader-spinner';
-import { client } from '../utils/fetchClient';
-import { Article } from '../types/article';
+import { Article } from '../types/articleType';
+import { getArticlesSortedByDate } from '../utils/api_helpers';
 
 const LatestNewsPage = () => {
   const [articles, setArticles] = React.useState<Article[]>([]);
@@ -22,7 +22,7 @@ const LatestNewsPage = () => {
   };
 
   const loadData = async () => {
-    const articlesDataApi = await client.get<any>('/articles?sort=publishedAt:desc&populate[0]=categories&populate[1]=author');
+    const articlesDataApi = await getArticlesSortedByDate();
 
     setArticles(articlesDataApi.data);
 
@@ -72,9 +72,9 @@ const LatestNewsPage = () => {
           </div>
           <div className='latest-news-page__sidebar'>
 
-            <CardBanner imgUrl={bannerEpicurus} />
+            <CardBanner imgUrl={bannerEpicurus} link='epicurus-plp.netlify.app' />
 
-            <CardBanner imgUrl={bannerItg}/>
+            <CardBanner imgUrl={bannerItg} link='itg-investments.com' />
 
           </div>
         </div> 
