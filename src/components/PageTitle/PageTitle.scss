@@ -29,8 +29,12 @@
       font-weight: 500;
       text-decoration: none;
 
+      @include onTablet {
+        font-size: 16px;
+      }
+
       @include onPhone {
-        font-size: 18px;
+        font-size: 14px;
       }
     }
 
@@ -49,8 +53,12 @@
     font-weight: 700;
     margin: 0 auto;
 
+    @include onTablet {
+      font-size: 40px;
+    }
+
     @include onPhone {
-      font-size: 36px;
+      font-size: 24px;
     }
   }
 }

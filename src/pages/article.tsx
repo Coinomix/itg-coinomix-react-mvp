@@ -10,6 +10,8 @@ import useTitle from '../utils/useTitle';
 import { getArticleBySlug } from '../utils/api_helpers';
 import { ArticleAttributes } from '../types/articleType';
 import { Loader } from '../components/Loader';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const ArticlePage = () => {
   const [article, setArticle] = React.useState<ArticleAttributes>();
@@ -22,18 +24,19 @@ const ArticlePage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const loadData = async () => {
-    const articleDataApi = await getArticleBySlug(slug);
-
-    setArticle(articleDataApi.data[0].attributes);
-
-    seIsLoading(false);
-  };
 
   React.useEffect(() => {
+    const loadData = async () => {
+      const articleDataApi = await getArticleBySlug(slug);
+  
+      setArticle(articleDataApi.data[0].attributes);
+  
+      seIsLoading(false);
+    };
+
     scrollToTop();
     loadData();
-  }, []);
+  }, [slug]);
 
   if (isLoading) {
     return (
@@ -60,7 +63,9 @@ const ArticlePage = () => {
 
           <div className='article__content'>
             <p className='article__content-text'>
-              {article?.content}
+              <Markdown remarkPlugins={[remarkGfm]} >
+                {article?.content}
+              </Markdown>
             </p>
           </div>
         </article>
