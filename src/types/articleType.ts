@@ -21,6 +21,20 @@ export interface ArticleAttributes {
       id: number;
       attributes: {
         url: string;
+        formats: {
+          thumbnail: {
+            url: string;
+          }
+          small: {
+            url: string;
+          }
+          medium: {
+            url: string;
+          }
+          large: {
+            url: string;
+          }
+        }
       }
     }
   }

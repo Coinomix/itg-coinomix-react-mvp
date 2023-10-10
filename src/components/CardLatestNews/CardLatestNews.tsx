@@ -31,7 +31,7 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
         <div className='card-latest-news__body'>
           <div className='card-latest-news__body-image'>
             <Link to={articleUrl}>
-              <img className='card-latest-news__image' src={articleData.image.data.attributes.url} alt={articleData.title} />
+              <img className='card-latest-news__image' src={articleData.image.data.attributes.formats.thumbnail.url} alt={articleData.title} />
             </Link>
           </div>
             <div className='card-latest-news__body-title'>
