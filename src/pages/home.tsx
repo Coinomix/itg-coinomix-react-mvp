@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import '../assets/styles/scss/index.scss';
+import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { CardNews } from '../components/CardNews';
@@ -10,14 +10,12 @@ import { CardNewsSmall } from '../components/CardNewsSmall';
 import { CardBanner } from '../components/CardBanner';
 import { Devider } from '../components/Devider';
 import { CardNewsType } from '../types/enums';
-import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
-import bannerItg from '../assets/images/banners/banner_itg.svg';
-import imgBitcoin from '../assets/images/demo/bitcoin.jpg';
-import imgLaptopThree from '../assets/images/demo/laptop_3.jpg';
-import useTitle from '../utils/useTitle';
 import { ArticleData } from '../types/articleType';
 import { getArticlesSortedByDate } from '../utils/api_helpers';
 import { Loader } from '../components/Loader';
+import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
+import bannerItg from '../assets/images/banners/banner_itg.svg';
+import useTitle from '../utils/useTitle';
 
 export const HomePage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
@@ -62,7 +60,7 @@ export const HomePage = () => {
         <div className='main__container'>
           <div className='main__topblock'>
             <div className='main__topnews'>
-              <CardNews type={CardNewsType.top} imgUrl={imgBitcoin} article={topNewsData()} />
+              <CardNews type={CardNewsType.top} article={topNewsData()} />
             </div>
 
             <div className='main__latestnews'>
@@ -88,7 +86,7 @@ export const HomePage = () => {
 
           <div className='main__topblock'>
             {articles.slice(0, 3).map((article) => 
-              <CardNewsSmall key={article.id} imgUrl={imgLaptopThree} article={article} />
+              <CardNewsSmall key={article.id} article={article} />
             )}
           </div>
 

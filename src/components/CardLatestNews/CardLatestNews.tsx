@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './CardLatestNews.scss';
 import { ArticleData } from '../../types/articleType';
 import { formateDate } from '../../utils/helpers';
-import imgDemo from '../../assets/images/demo/bitcoin.jpg';
 
 interface Props {
   article: ArticleData;
@@ -32,7 +31,7 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
         <div className='card-latest-news__body'>
           <div className='card-latest-news__body-image'>
             <Link to={articleUrl}>
-              <img className='card-latest-news__image' src={imgDemo} alt='' />
+              <img className='card-latest-news__image' src={articleData.image.data.attributes.url} alt={articleData.title} />
             </Link>
           </div>
             <div className='card-latest-news__body-title'>

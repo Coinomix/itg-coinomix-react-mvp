@@ -6,7 +6,7 @@
   height: 340px;
   border-radius: 22px;
   border: 2px solid #2C2C2C;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(91deg, #6F55B4 0%, #DB45D1 100%);
+  // background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(91deg, #6F55B4 0%, #DB45D1 100%);
 
   @include onPhone {
     height: 180px;

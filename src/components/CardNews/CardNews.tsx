@@ -20,15 +20,16 @@ export const CardNews: React.FC<Props> = ({
 }) => {
 
   const publishData = formateDate(article.publish_date);
+  const imageArticle = imgUrl ? imgUrl : article.image.data.attributes.url;
 
   return (
     <Link to={`/${article.categories.data[0].attributes.slug}/${article.slug}`} >
       <div className='cardnews' style={{ height: type }}>
-        {imgUrl && (
+        {imageArticle && (
           <img
-            src={imgUrl}
+            src={imageArticle}
             className='cardnews__image'
-            alt=''
+            alt={article.title}
           />
         )}
         <div className='cardnews__content'>
@@ -39,9 +40,9 @@ export const CardNews: React.FC<Props> = ({
             'cardnews__title-top': type === CardNewsType.top,
           })}>
 
-              <Link to={article.slug} className='cardnews__title-link'>
+              {/* <Link to={`/${article.categories.data[0].attributes.slug}/${article.slug}`} className='cardnews__title-link'> */}
                 {article.title}
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
 

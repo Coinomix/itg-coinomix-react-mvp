@@ -13,14 +13,16 @@ export const CardNewsSmall: React.FC<Props> = ({
   imgUrl,
   article,
 }) => {
+  const imageArticle = imgUrl ? imgUrl : article.attributes.image.data.attributes.url;
+
   return (
     <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} >
       <div className='cardnews-small'>
-        {imgUrl && (
+        {imageArticle && (
           <img
-            src={imgUrl}
+            src={imageArticle}
             className='cardnews-small__image'
-            alt=''
+            alt={article.attributes.title}
           />
         )}
         <div className='cardnews-small__content'>
