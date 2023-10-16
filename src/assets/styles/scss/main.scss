@@ -56,10 +56,10 @@
   }
 
   &__container {
-    padding-top: 124px;
-  
+    padding-top: 98px;
+
     @include onPhone {
-      padding-top: 80px;
+      padding-top: 64px;
     }
   }
 
@@ -81,18 +81,30 @@
   &__latestnews {
     max-width: 600px;
 
+    @include onDesktopMedium {
+      max-width: 440px;
+    }
+
     @include onTablet {
       max-width: 100%;
     }
   }
 
-  &__section {  
+  &__section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin: 120px 0 80px;
+
+    @include onDesktopMedium {
+      margin: 82px 0 40px;
+    }
+
+    @include onTablet {
+      margin: 48px 0 20px;
+    }
 
     @include onPhone {
       margin: 84px 0 44px;

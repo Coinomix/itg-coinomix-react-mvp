@@ -39,10 +39,7 @@ export const CardNews: React.FC<Props> = ({
             <div className={classNames('cardnews__title', {
             'cardnews__title-top': type === CardNewsType.top,
           })}>
-
-              {/* <Link to={`/${article.categories.data[0].attributes.slug}/${article.slug}`} className='cardnews__title-link'> */}
                 {article.title}
-              {/* </Link> */}
             </div>
           </div>
 

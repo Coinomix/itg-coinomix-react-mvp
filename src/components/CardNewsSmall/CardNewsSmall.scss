@@ -9,12 +9,13 @@
   height: 280px;
   max-width: 600px;
 
+  @include onDesktopMedium {
+    height: 240px;
+  }
+
   @include onTablet {
     min-width: 100%;
     max-width: 100%;
-  }
-
-  @include onPhone {
     height: 192px;
   }
 
@@ -39,8 +40,12 @@
     height: 100%;
     padding: 32px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.00) 100%);
-    
-    @include onPhone {
+
+    @include onDesktopMedium {
+      padding: 24px;
+    }
+
+    @include onTablet {
       padding: 18px;
     }
   }
@@ -56,6 +61,12 @@
 
   &__title {
     width: 80%;
+    font-size: 20px;
+    font-weight: 700;
+
+    @include onTablet {
+      font-size: 18px;
+    }
 
     @include onPhone {
       width: 100%;

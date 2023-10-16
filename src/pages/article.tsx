@@ -24,7 +24,6 @@ const ArticlePage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
   React.useEffect(() => {
     const loadData = async () => {
       const articleDataApi = await getArticleBySlug(slug);
@@ -59,19 +58,19 @@ const ArticlePage = () => {
       <main className='main'>
         <article className='article'>
 
-          <CardBanner imgUrl={article?.image.data.attributes.url} imgAlt={article?.title} />
+          <div className='article__image'>
+            <CardBanner imgUrl={article?.image.data.attributes.url} imgAlt={article?.title} />
+          </div>
 
           <div className='article__content'>
-            <p className='article__content-text'>
-              <Markdown remarkPlugins={[remarkGfm]} >
-                {article?.content}
-              </Markdown>
-            </p>
+            <Markdown remarkPlugins={[remarkGfm]} components={{
+              p: ({ children }) => <p className="article__content-p">{children}</p>,
+            }}>
+              {article?.content}
+            </Markdown>
           </div>
         </article>
       </main>
-
-      <Devider height='140px' />
 
       <footer>
         <Footer />

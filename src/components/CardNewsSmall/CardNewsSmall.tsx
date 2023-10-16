@@ -16,7 +16,7 @@ export const CardNewsSmall: React.FC<Props> = ({
   const imageArticle = imgUrl ? imgUrl : article.attributes.image.data.attributes.formats.medium.url;
 
   return (
-    <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} >
+    <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} style={{width: '100%'}}>
       <div className='cardnews-small'>
         {imageArticle && (
           <img

@@ -58,7 +58,7 @@ export const HomePage = () => {
 
       <main className='main'>
         <div className='main__container'>
-          <div className='main__topblock'>
+          <section className='main__topblock'>
             <div className='main__topnews'>
               <CardNews type={CardNewsType.top} article={topNewsData()} />
             </div>
@@ -67,7 +67,7 @@ export const HomePage = () => {
               <BlockLatestNews articles={articles} />
             </div>
 
-          </div>
+          </section>
 
           <Devider />
 
@@ -84,11 +84,11 @@ export const HomePage = () => {
 
           <Devider />
 
-          <div className='main__topblock'>
+          <section className='main__topblock'>
             {articles.slice(0, 3).map((article) => 
               <CardNewsSmall key={article.id} article={article} />
             )}
-          </div>
+          </section>
 
           <Devider />         
 

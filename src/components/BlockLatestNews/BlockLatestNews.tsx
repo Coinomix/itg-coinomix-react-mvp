@@ -12,7 +12,7 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
   return (
     <div className='latestnews'>
       <div className='latestnews__header'>
-        <h3 className='latestnews__title'><Link to='/latest-news'>Latest news</Link></h3>
+        <h1 className='latestnews__title'><Link to='/latest-news'>Latest news</Link></h1>
         <Link to='/latest-news'>
           <img className='latestnews__arrowicon' src={arrowIcon} alt='Latest news icon' />
         </Link>
@@ -23,7 +23,7 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
           return (
             <div key={article.id} className='latestnews__item'>
             <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} className='latestnews__item-link'>
-              <h3 className='latestnews__item-title'>{article.attributes.title}</h3>
+              <h2 className='latestnews__item-title'>{article.attributes.title}</h2>
             </Link>
             <p className='latestnews__item-description'>{article.attributes.description}</p>
             <hr className='latestnews__item-hr' />

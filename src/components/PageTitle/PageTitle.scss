@@ -46,15 +46,22 @@
   }
 
   &__title {
-    max-width: 1126px;
+    max-width: 1100px;
     text-align: center;
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
     margin: 0 auto;
 
+    
+    @include onDesktopMedium {
+      max-width: 960px;
+      font-size: 48px;
+    }
+
     @include onTablet {
-      font-size: 40px;
+      max-width: 560px;
+      font-size: 28px;
     }
 
     @include onPhone {
