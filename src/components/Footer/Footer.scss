@@ -56,6 +56,14 @@
     font-size: 20px;
     line-height: 18px; /* 90% */
 
+    @include onDesktopMedium {
+      font-size: 18px;
+    }
+
+    @include onTablet {
+      font-size: 14px;
+    }
+
     @include onPhone {
       font-size: 12px;
     }
@@ -76,12 +84,20 @@
 
   &__link {
     color: #888;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 18px; /* 90% */
     text-decoration: none;
 
+    @include onDesktopMedium {
+      font-size: 18px;
+    }
+
+    @include onTablet {
+      font-size: 14px;
+    }
+
     @include onPhone {
-      font-size: 16px;
+      font-size: 12px;
     }
 
     &:link {

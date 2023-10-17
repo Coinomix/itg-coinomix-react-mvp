@@ -1,19 +1,21 @@
 import * as React from 'react';
-import { BallTriangle } from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
     <div className="loader">
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="#94CBFD"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass=''
-          wrapperStyle={{}}
-          visible={true}
-        />
+      <Oval
+        height={100}
+        width={100}
+        color="#90E2F1"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel='oval-loading'
+        secondaryColor="#4F8089"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
       </div>
   )
 }

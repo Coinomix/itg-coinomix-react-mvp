@@ -8,19 +8,20 @@
   // flex-wrap: wrap;
   // position: relative;
   margin: 0 40px;
-  padding-top: 100px;
+  padding-top: 94px;
 
   @include onTablet {
     margin: 0 20px;
-    padding-top: 72px;
   }
 
   @include onPhone {
     margin: 0 14px;
+    padding-top: 60px;
   }
 
   &__breadcrumbs {
     display: block;
+    margin-bottom: 1rem;
     text-align: left;
     font-size: 24px;
     text-decoration: none;
@@ -40,8 +41,7 @@
     max-width: 1100px;
     text-align: center;
     font-size: 56px;
-    font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 auto;
 
     
