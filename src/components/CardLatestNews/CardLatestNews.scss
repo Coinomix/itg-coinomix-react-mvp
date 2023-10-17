@@ -6,40 +6,55 @@
   border-radius: 28px;
   background: #181818;
 
+  
+  @include onPhone {
+    padding: 18px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 28px;
+
+    @include onDesktopMedium {
+      gap: 20px;
+    }
+
+    @include onPhone {
+      gap: 18px;
+    }
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 18px;
+
+    @include onPhone {
+      flex-direction: column-reverse;
+    }
   }
 
   &__author {
     display: flex;
     align-items: center;
     gap: 32px;
+    font-size: 16px;
+
+    @include onPhone {
+      font-size: 12px;
+    }
 
     &-link {
-      color: #FAFAFA;
-      font-size: 16px;
-      font-style: normal;
       font-weight: 600;
-      line-height: normal;
       text-decoration: none;
+
     }
 
     &-date {
-      color: #FAFAFA;
-      font-size: 16px;
-      font-style: normal;
       font-weight: 500;
-      line-height: normal;
     }
   }
 
@@ -65,20 +80,28 @@
   &__body {
     display: flex;
     align-items: flex-start;
+    align-content: flex-start;
     gap: 24px;
 
     @include onPhone {
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
+      gap: 8px;
     }
 
     &-image {
       position: relative;
       overflow: hidden;
-      height: 174px;
       min-width: 314px;
+      min-height: 174px;
+
+      @include onDesktopMedium {
+        min-width: 298px;
+        min-height: 156px;
+      }
 
       @include onPhone {
-        width: 100%;
+        min-width: 114px;
+        min-height: 68px;
       }
     }
 
@@ -107,6 +130,18 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    @include onDesktopMedium {
+      font-size: 28px;
+    }
+
+    @include onTablet {
+      font-size: 20px;
+    }
+
+    @include onPhone {
+      font-size: 14px;
+    }
   }
 
   &__viewmore {
@@ -125,7 +160,15 @@
       -webkit-text-fill-color: transparent;
     }
 
+    @include onDesktopMedium {
+      font-size: 18px;
+    }
+
     @include onTablet {
+      font-size: 14px;
+    }
+
+    @include onPhone {
       display: none;
     }
   }

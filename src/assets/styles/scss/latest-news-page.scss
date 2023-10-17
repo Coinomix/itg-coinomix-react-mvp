@@ -3,8 +3,12 @@
 .latest-news-page {
   margin: 40px 120px;
 
-  @include onTablet {
+  @include onDesktopMedium {
     margin: 0 40px;
+  }
+
+  @include onDesktopMedium {
+    margin: 0 20px;
   }
 
   @include onPhone {
@@ -16,6 +20,10 @@
     flex-direction: row;
     gap: 40px;
     margin-top: 40px;
+
+    @include onDesktopMedium {
+      gap: 20px;
+    }
   }
 
   &__content {
@@ -23,6 +31,14 @@
     flex-direction: column;
     gap: 40px;
     max-width: 1040px;
+
+    @include onDesktopMedium {
+      gap: 28px;
+    }
+    
+    @include onTablet {
+      gap: 24px;
+    }
   }
 
   &__filters {
@@ -62,7 +78,14 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 600px;
+    min-width: 600px;
+    max-height: 550px;
+
+    @include onDesktopMedium {
+      gap: 28px;
+      min-width: 400px;
+      max-height: 500px;
+    }
 
     @include onTablet {
       display: none;

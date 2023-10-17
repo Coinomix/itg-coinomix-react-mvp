@@ -1,51 +1,42 @@
 @import '../../assets/styles/scss/mixins';
 
 .pagetitle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  position: relative;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: flex-start;
+  // flex-wrap: wrap;
+  // position: relative;
   margin: 0 40px;
-  padding-top: 120px;
+  padding-top: 100px;
 
   @include onTablet {
     margin: 0 20px;
+    padding-top: 72px;
   }
 
   @include onPhone {
     margin: 0 14px;
-    padding-top: 72px;
   }
 
   &__breadcrumbs {
-    position: absolute;
+    display: block;
+    text-align: left;
+    font-size: 24px;
+    text-decoration: none;
 
-    &-link {
-      color: #FAFAFA;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 500;
-      text-decoration: none;
-
-      @include onTablet {
-        font-size: 16px;
-      }
-
-      @include onPhone {
-        font-size: 14px;
-      }
+    @include onTablet {
+      font-size: 16px;
     }
 
-    &-title {
-      @include onPhone {
-        display: none;
-      }
+    @include onPhone {
+      font-size: 14px;
     }
   }
 
   &__title {
+    display: block;
+    text-align: center;
     max-width: 1100px;
     text-align: center;
     font-size: 56px;
