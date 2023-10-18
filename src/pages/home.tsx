@@ -75,7 +75,7 @@ export const HomePage = () => {
 
           <Devider />
 
-          <CardBanner imgUrl={bannerEpicurus} link='epicurus-plp.netlify.app' />
+          <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
           <div className='main__section'>
               <h2 className='main__section-title'>Latest news</h2>

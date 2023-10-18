@@ -109,7 +109,7 @@
     @include onPhone {
       margin: 84px 0 44px;
     }
-    
+
     &-title {
       position: relative;
       color: #FAFAFA;
@@ -198,7 +198,7 @@
           width: 100%; /* Увеличиваем ширину до 100% */
         }
       }
-  
+
       @keyframes underlineShrink {
         0% {
           width: 100%;

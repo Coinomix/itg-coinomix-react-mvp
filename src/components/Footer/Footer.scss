@@ -74,6 +74,7 @@
     flex-direction: row;
     align-items: flex-start;
     gap: 56px;
+    list-style: none;
 
     @include onPhone {
       flex-direction: column;

@@ -3,6 +3,7 @@
 const API_KEY = process.env.STRAPI_API_TOKEN;
 const API_URL = 'https://strapi-deployment-9fmb.onrender.com/api';
 // const API_URL = 'http://localhost:1337/api';
+// const API_URL = process.env.STRAPI_API_URL;
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 

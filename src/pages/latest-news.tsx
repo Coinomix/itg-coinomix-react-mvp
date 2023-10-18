@@ -7,9 +7,9 @@ import useTitle from '../utils/useTitle';
 import { CardBanner } from '../components/CardBanner';
 import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
-import { BallTriangle } from 'react-loader-spinner';
 import { ArticleData } from '../types/articleType';
 import { getArticlesSortedByDate } from '../utils/api_helpers';
+import { Loader } from '../components/Loader';
 
 const LatestNewsPage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
@@ -36,18 +36,7 @@ const LatestNewsPage = () => {
 
   if (isLoading) {
     return (
-      <div className="loader">
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="#94CBFD"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass=''
-          wrapperStyle={{}}
-          visible={true}
-        />
-      </div>
+      <Loader />
     )
   };
 
@@ -72,7 +61,7 @@ const LatestNewsPage = () => {
           </div>
           <div className='latest-news-page__sidebar'>
 
-            <CardBanner imgUrl={bannerEpicurus} link='epicurus-plp.netlify.app' />
+            <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
             <CardBanner imgUrl={bannerItg} link='itg-investments.com' />
 

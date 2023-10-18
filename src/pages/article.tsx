@@ -3,7 +3,6 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import '../assets/styles/scss/index.scss';
 import { Devider } from '../components/Devider';
-import { CardBanner } from '../components/CardBanner';
 import { PageTitle } from '../components/PageTitle';
 import { useParams } from 'react-router-dom';
 import useTitle from '../utils/useTitle';
@@ -58,13 +57,23 @@ const ArticlePage = () => {
       <main className='main'>
         <article className='article'>
 
-          <div className='article__image'>
-            <CardBanner imgUrl={article?.image.data.attributes.url} imgAlt={article?.title} />
+          <div className='article__imagewrapper'>
+            <img src={article?.image.data.attributes.url} alt={article?.title} className='article__image' />
           </div>
 
           <div className='article__content'>
             <Markdown remarkPlugins={[remarkGfm]} components={{
+              h2: ({ children }) => <h2 className="article__content-h">{children}</h2>,
+              h3: ({ children }) => <h3 className="article__content-h">{children}</h3>,
+              h4: ({ children }) => <h4 className="article__content-h">{children}</h4>,
+              h5: ({ children }) => <h5 className="article__content-h">{children}</h5>,
+              h6: ({ children }) => <h6 className="article__content-h">{children}</h6>,
               p: ({ children }) => <p className="article__content-p">{children}</p>,
+              ol: ({ children }) => <ol className="article__content-list">{children}</ol>,
+              ul: ({ children }) => <ul className="article__content-list">{children}</ul>,
+              a: ({ children, href }) => <a href={href} className="article__content-link">{children}</a>,
+              blockquote: ({ children }) => <blockquote className="article__content-blockquote">{children}</blockquote>,
+              img: ({ src, alt }) => <img src={src}  alt={alt} className="article__content-image" />,
             }}>
               {article?.content}
             </Markdown>
