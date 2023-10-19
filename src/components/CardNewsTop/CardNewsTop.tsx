@@ -1,6 +1,6 @@
 import React from 'react';
 import './CardNewsTop.scss';
-import { CardTags } from '../CardTags';
+// import { CardTags } from '../CardTags';
 import arrowIcon from '../../assets/images/arrow_icon.svg';
 import imgCity from '../../assets/images/demo/city.png';
 

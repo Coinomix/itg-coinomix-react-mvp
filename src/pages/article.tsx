@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import '../assets/styles/scss/index.scss';
-import { Devider } from '../components/Devider';
 import { PageTitle } from '../components/PageTitle';
 import { useParams } from 'react-router-dom';
 import useTitle from '../utils/useTitle';
@@ -17,11 +15,13 @@ const ArticlePage = () => {
   const [isLoading, seIsLoading] = React.useState(true);
   let { slug } = useParams();
 
-  useTitle('Article Page');
+  useTitle(article?.title || '');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const imageUrl = article?.image.data.attributes.url;
 
   React.useEffect(() => {
     const loadData = async () => {
@@ -47,19 +47,16 @@ const ArticlePage = () => {
       <Header />
 
       <PageTitle 
-            title={article?.title}
             breadcrumbsTitle='Home'
             breadcrumbsUrl=''
       />
 
-      <Devider height='40px' />
-
       <main className='main'>
         <article className='article'>
 
-          <div className='article__imagewrapper'>
-            <img src={article?.image.data.attributes.url} alt={article?.title} className='article__image' />
-          </div>
+          <h1 className='article__title'>{article?.title}</h1>
+
+          <img src={imageUrl} alt={article?.title} className='article__image' />
 
           <div className='article__content'>
             <Markdown remarkPlugins={[remarkGfm]} components={{

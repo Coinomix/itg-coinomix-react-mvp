@@ -104,6 +104,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    list-style: none;
 
     @include onTablet {
       font-size: 12px;

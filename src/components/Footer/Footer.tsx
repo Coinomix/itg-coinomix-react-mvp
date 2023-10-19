@@ -18,13 +18,13 @@ export const Footer = () => {
           <a href='https://itg-investments.com'>
             <img className='footer__icons' src={iconlogoCoinomix} alt='ITG logo Icon' />
           </a>
-          <a href='https://t.me'>
+          <a href='https://t.me/ITG_News'>
             <img className='footer__icons' src={iconTelegram} alt='Telegram Icon' />
           </a>
-          <a href='https://instagram.com'>
+          <a href='https://www.instagram.com/itg_official__/'>
             <img className='footer__icons' src={iconInstagram} alt='Instagram Icon' />
           </a>
-          <a href='https://youtube.com'>
+          <a href='https://www.youtube.com/@ITG_official_channel'>
             <img className='footer__icons' src={iconYoutube} alt='YouTube Icon' />
           </a>
         </div>

@@ -16,8 +16,8 @@ export const PageTitle: React.FC <Props> = ({
 }) => {
   return (
     <div className='pagetitle'>
-        <Link to={`/${breadcrumbsUrl}`} className='pagetitle__breadcrumbs'>&lt; {breadcrumbsTitle}</Link>
-      <h1 className='pagetitle__title'>{title}</h1>
+        <Link to={`/${breadcrumbsUrl}`} className='pagetitle__breadcrumbs'>{breadcrumbsTitle}</Link>
+      {title && (<h1 className='pagetitle__title'>{title}</h1>)}
   </div>
   );
 };

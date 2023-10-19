@@ -1,24 +1,23 @@
 import * as React from 'react';
-import '../assets/styles/scss/index.scss';
-import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { CardNews } from '../components/CardNews';
 import { CryptoString } from '../components/CryptoString';
 import { BlockLatestNews } from '../components/BlockLatestNews';
-import { CardNewsSmall } from '../components/CardNewsSmall';
 import { CardBanner } from '../components/CardBanner';
 import { Devider } from '../components/Devider';
 import { CardNewsType } from '../types/enums';
-import { ArticleData } from '../types/articleType';
-import { getArticlesSortedByDate } from '../utils/api_helpers';
+import { ArticleCaregoryData, ArticleData } from '../types/articleType';
+import { getArticlesSortedByDate, getCategories } from '../utils/api_helpers';
 import { Loader } from '../components/Loader';
 import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import useTitle from '../utils/useTitle';
+import { BlockCategoryNewsHome } from '../components/BlockCategoryNewsHome/BlockCategoryNewsHome';
 
 export const HomePage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
+  const [categories, setCategories] = React.useState<ArticleCaregoryData[]>([]);
   const [isLoading, seIsLoading] = React.useState(true);
 
   useTitle('Home Page | Coinomix');
@@ -29,8 +28,10 @@ export const HomePage = () => {
 
   const loadData = async () => {
     const articlesDataApi = await getArticlesSortedByDate();
+    const categoriesDataApi = await getCategories();
 
     setArticles(articlesDataApi.data);
+    setCategories(categoriesDataApi.data);
 
     seIsLoading(false);
   };
@@ -77,18 +78,9 @@ export const HomePage = () => {
 
           <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
-          <div className='main__section'>
-              <h2 className='main__section-title'>Latest news</h2>
-              <Link to='/latest-news' className='main__section-readmore'>Read more</Link>
-          </div>
-
-          <Devider />
-
-          <section className='main__topblock'>
-            {articles.slice(0, 3).map((article) => 
-              <CardNewsSmall key={article.id} article={article} />
-            )}
-          </section>
+          {categories.map((category) => (
+            <BlockCategoryNewsHome category={category} />
+          ))}
 
           <Devider />         
 

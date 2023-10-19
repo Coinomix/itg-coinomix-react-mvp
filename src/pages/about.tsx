@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import '../assets/styles/scss/index.scss';
 import { CardBanner } from '../components/CardBanner';
 import { PageTitle } from '../components/PageTitle';
 import imgAboutUs from '../assets/images/about-us.svg';

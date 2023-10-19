@@ -7,6 +7,20 @@ export interface ArticleData {
   attributes: ArticleAttributes;
 }
 
+export interface ArticleCaregory {
+  data: ArticleCaregoryData[];
+}
+
+export interface ArticleCaregoryData {
+  id: number,
+  attributes: {
+    name: string;
+    slug: string;
+    description: string;
+    locale: string;
+  }
+}
+
 export interface ArticleAttributes {
   title: string;
   description: string;
@@ -39,7 +53,7 @@ export interface ArticleAttributes {
     }
   }
   categories: {
-    data: ArticleCaregory[];
+    data: ArticleCaregoryData[];
   }
   author: {
     data: {
@@ -50,14 +64,4 @@ export interface ArticleAttributes {
       }
     }
   };
-}
-
-export interface ArticleCaregory {
-  id: number,
-  attributes: {
-    name: string;
-    slug: string;
-    description: string;
-    locale: string;
-  }
 }

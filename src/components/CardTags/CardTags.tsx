@@ -1,11 +1,11 @@
 import React from 'react';
 import './CardTags.scss'
 import arrowIcon from '../../assets/images/arrow_icon.svg';
-import { ArticleCaregory } from '../../types/articleType';
+import { ArticleCaregoryData } from '../../types/articleType';
 
 interface Props {
   isArrow?: boolean;
-  categories: ArticleCaregory[];
+  categories: ArticleCaregoryData[];
 }
 
 export const CardTags: React.FC<Props> = ({ isArrow = true, categories }) => {
