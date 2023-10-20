@@ -4,6 +4,7 @@ import { ArticleCaregoryData, ArticleData } from '../../types/articleType';
 import { Devider } from '../Devider';
 import { CardNewsSmall } from '../CardNewsSmall';
 import { getArticlesByCategory } from '../../utils/api_helpers';
+import { Loader } from '../Loader';
 
 interface Props {
   category: ArticleCaregoryData;
@@ -23,7 +24,7 @@ export const BlockCategoryNewsHome: React.FC<Props> = ({ category }) => {
 
   React.useEffect(() => {
     loadData();
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -35,11 +36,15 @@ export const BlockCategoryNewsHome: React.FC<Props> = ({ category }) => {
 
     <Devider />
 
-    <section className='main__topblock'>
+    {articles ? (
+      <section className='main__topblock'>
       {articles.slice(0, 3).map((article) => 
         <CardNewsSmall key={article.id} article={article} />
       )}
     </section>
+    )
+    : <Loader />
+  }
   </>
   );
 };

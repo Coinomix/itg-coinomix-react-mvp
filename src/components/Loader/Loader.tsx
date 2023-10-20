@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Loader.scss';
 import { Oval } from 'react-loader-spinner';
 
 export const Loader = () => {
