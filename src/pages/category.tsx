@@ -27,7 +27,6 @@ const CategoryPage = () => {
 
       <PageTitle 
             title="Category page"
-            breadcrumbsTitle="Home"
       />
 
       <main className="main">

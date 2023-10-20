@@ -47,8 +47,8 @@ const ArticlePage = () => {
       <Header />
 
       <PageTitle 
-            breadcrumbsTitle='Home'
-            breadcrumbsUrl=''
+            breadcrumbsTitle={article?.categories.data[0].attributes.name || ''}
+            breadcrumbsUrl={article?.categories.data[0].attributes.slug || ''}
       />
 
       <main className='main'>

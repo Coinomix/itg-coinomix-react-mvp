@@ -46,7 +46,6 @@ const LatestNewsPage = () => {
 
       <PageTitle
           title='Latest news'
-          breadcrumbsTitle='Home'
       />
 
       <main className='latest-news-page'>

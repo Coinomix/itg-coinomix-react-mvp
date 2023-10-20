@@ -23,7 +23,6 @@ const AboutPage = () => {
 
       <PageTitle 
             title='About us'
-            breadcrumbsTitle='Home'
       />
 
       <main className='main'>
