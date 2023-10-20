@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../assets/styles/scss/latest-news-page.scss'
+import '../assets/styles/scss/latest-news-page.scss';
 import { Header } from '../components/Header';
 import { PageTitle } from '../components/PageTitle';
 import { CardLatestNews } from '../components/CardLatestNews';

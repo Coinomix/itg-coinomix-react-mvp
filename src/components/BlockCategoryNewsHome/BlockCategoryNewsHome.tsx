@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArticleCaregoryData, ArticleData } from '../../types/articleType';
-import { Loader } from '../Loader';
 import { Devider } from '../Devider';
 import { CardNewsSmall } from '../CardNewsSmall';
 import { getArticlesByCategory } from '../../utils/api_helpers';
@@ -12,25 +11,20 @@ interface Props {
 
 export const BlockCategoryNewsHome: React.FC<Props> = ({ category }) => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
-  const [isLoading, seIsLoading] = React.useState(true);
+  // const [isLoading, seIsLoading] = React.useState(true);
 
   const loadData = async () => {
     const articlesDataApi = await getArticlesByCategory(category.id);
 
     setArticles(articlesDataApi.data);
 
-    seIsLoading(false);
+    // seIsLoading(false);
   };
 
-  // React.useEffect(() => {
-  //   loadData();
-  // }, []);
-
-  if (isLoading) {
-    return (
-      <Loader />
-    )
-  };
+  React.useEffect(() => {
+    loadData();
+  // eslint-disable-next-line
+  }, []);
 
   return (
     <>

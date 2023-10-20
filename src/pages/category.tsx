@@ -5,7 +5,7 @@ import { PageTitle } from "../components/PageTitle";
 
 import { CardNewsTop } from "../components/CardNewsTop";
 import { Devider } from "../components/Devider";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useTitle from "../utils/useTitle";
 
 const CategoryPage = () => {
@@ -33,10 +33,10 @@ const CategoryPage = () => {
       <main className="main">
         <div className="main__categories">
           <div className="main__categories-container">
-            <a href="/analytics" className="main__categories-link">Analytics</a>
-            <a href="/digital" className="main__categories-link">Digital</a>
-            <a href="/directory" className="main__categories-link">Directory</a>
-            <a href="/exchange" className="main__categories-link">Exchange</a>
+            <Link to="/analytics" className="main__categories-link">Analytics</Link>
+            <Link to="/digital" className="main__categories-link">Digital</Link>
+            <Link to="/directory" className="main__categories-link">Directory</Link>
+            <Link to="/exchange" className="main__categories-link">Exchange</Link>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ const CategoryPage = () => {
 
         <div className="main__section">
             <h2 className="main__section-title">Best exchange</h2>
-            <a href="/" className="main__section-readmore">Read more</a>
+            <Link to="/" className="main__section-readmore">Read more</Link>
         </div>
 
         <div className="main__container-latestnews">
@@ -72,7 +72,7 @@ const CategoryPage = () => {
 
       <div className="main__section">
           <h2 className="main__section-title">Must to read</h2>
-          <a href="#" className="main__section-readmore">Read more</a>
+          <Link to="#" className="main__section-readmore">Read more</Link>
       </div>
       </main>
 
