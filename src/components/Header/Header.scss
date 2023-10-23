@@ -11,9 +11,9 @@
     top: 0;
     left: 0;
     z-index: 100;
-    -webkit-backdrop-filter: blur(100px) brightness(100%);
-    backdrop-filter: blur(100px) brightness(100%);
-    background-color: rgba(15, 15, 15, 0.2);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    background-color: rgba(15, 15, 15, 0.6);
     
     @include onPhone {
       padding: 20px 14px;
