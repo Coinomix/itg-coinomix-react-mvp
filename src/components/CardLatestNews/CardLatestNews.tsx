@@ -14,23 +14,12 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
   const articleUrl = `/${articleData.categories.data[0].attributes.slug}/${articleData.slug}`;
 
   return (
+    <Link to={articleUrl}>
     <div className='card-latest-news'>
       <div className='card-latest-news__container'>
-        {/* <div className='card-latest-news__header'>
-          <div className='card-latest-news__author'>
-              <span className='card-latest-news__author-link'>by {articleData.author.data.attributes.name}</span>
-              <p className='card-latest-news__author-date'>{formateDate(articleData.publish_date)}</p>
-          </div>
-
-          <CardTags categories={articleData.categories.data} isArrow={false} />
-
-        </div> */}
-
         <div className='card-latest-news__body'>
           <div className='card-latest-news__body-image'>
-            <Link to={articleUrl}>
               <img className='card-latest-news__image' src={articleData.image.data.attributes.formats.medium.url} alt={articleData.title} />
-            </Link>
 
             <div className='card-latest-news__header'>
               <CardTags categories={articleData.categories.data} isArrow={false} />
@@ -56,5 +45,6 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
         </div>
       </div>
     </div>
+    </Link>
   )
 }

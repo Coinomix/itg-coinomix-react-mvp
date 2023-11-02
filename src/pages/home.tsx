@@ -78,7 +78,7 @@ export const HomePage = () => {
 
           <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
-          {categories.map((category) => (
+          {categories.slice(0, 5).map((category) => (
             <BlockCategoryNewsHome category={category} />
           ))}
 

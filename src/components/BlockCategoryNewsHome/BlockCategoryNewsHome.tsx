@@ -30,8 +30,8 @@ export const BlockCategoryNewsHome: React.FC<Props> = ({ category }) => {
   return (
     <>
     <div className='main__section'>
-      <h2 className='main__section-title'>{category.attributes.name}</h2>
-      <Link to={category.attributes.slug} className='main__section-readmore'>Read more</Link>
+      <h2 className='main__section-title'>{`#${category.attributes.name}`}</h2>
+      <Link to={category.attributes.slug} className='main__section-readmore'>View all</Link>
     </div>
 
     <Devider />

@@ -2,6 +2,7 @@ import React from 'react';
 import './CardTags.scss'
 import arrowIcon from '../../assets/images/arrow_icon.svg';
 import { ArticleCaregoryData } from '../../types/articleType';
+import { Link } from 'react-router-dom';
 
 interface Props {
   isArrow?: boolean;
@@ -13,7 +14,7 @@ export const CardTags: React.FC<Props> = ({ isArrow = true, categories }) => {
     <div className='cardtags'>
       <div className='cardtags__tags'>
         {categories.map((category) =>
-          <span key={category.id} className='cardtags__tagname'>{category.attributes.name}</span>
+          <Link to={`/${category.attributes.slug}`} key={category.id} className='cardtags__tagname'>{category.attributes.name}</Link>
         )}
       </div>
 
