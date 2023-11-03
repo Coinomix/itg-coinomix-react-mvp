@@ -6,7 +6,7 @@ import ArticlePage from './pages/article';
 import LatestNewsPage from './pages/latest-news';
 import NotFoundPage from './pages/404';
 import AboutPage from './pages/about';
-import CategoryPage from './pages/category';
+import TagPage from './pages/tag';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/latest-news' element={<LatestNewsPage />} />
         <Route path='/about-us' element={<AboutPage />} />
-        <Route path='/:category' element={<CategoryPage />} />
-        <Route path='/:category/:slug' element={<ArticlePage />} />
+        <Route path='/:tag' element={<TagPage />} />
+        <Route path='/:tag/:slug' element={<ArticlePage />} />
       </Routes>
     </BrowserRouter>
   );

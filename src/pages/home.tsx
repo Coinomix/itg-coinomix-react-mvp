@@ -7,17 +7,17 @@ import { BlockLatestNews } from '../components/BlockLatestNews';
 import { CardBanner } from '../components/CardBanner';
 import { Devider } from '../components/Devider';
 import { CardNewsType } from '../types/enums';
-import { ArticleCaregoryData, ArticleData } from '../types/articleType';
-import { getArticlesSortedByDate, getCategories } from '../utils/api_helpers';
+import { TagData, ArticleData } from '../types/articleType';
+import { getArticlesSortedByDate, getTags } from '../utils/api_helpers';
 import { Loader } from '../components/Loader';
 import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
 import useTitle from '../utils/useTitle';
-import { BlockCategoryNewsHome } from '../components/BlockCategoryNewsHome/BlockCategoryNewsHome';
+import { BlockTagNewsHome } from '../components/BlockTagNewsHome/BlockTagNewsHome';
 
 export const HomePage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
-  const [categories, setCategories] = React.useState<ArticleCaregoryData[]>([]);
+  const [tags, settags] = React.useState<TagData[]>([]);
   const [isLoading, seIsLoading] = React.useState(true);
 
   useTitle('Home Page | Coinomix');
@@ -27,11 +27,13 @@ export const HomePage = () => {
   };
 
   const loadData = async () => {
+    seIsLoading(true);
+
     const articlesDataApi = await getArticlesSortedByDate();
-    const categoriesDataApi = await getCategories();
+    const tagsDataApi = await getTags();
 
     setArticles(articlesDataApi.data);
-    setCategories(categoriesDataApi.data);
+    settags(tagsDataApi.data);
 
     seIsLoading(false);
   };
@@ -78,11 +80,11 @@ export const HomePage = () => {
 
           <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
-          {categories.slice(0, 5).map((category) => (
-            <BlockCategoryNewsHome category={category} />
+          {tags.slice(0, 5).map((tag) => (
+            <BlockTagNewsHome tag={tag} />
           ))}
 
-          <Devider />         
+          <Devider />
 
           <CryptoString />
 

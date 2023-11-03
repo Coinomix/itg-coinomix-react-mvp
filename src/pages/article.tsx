@@ -25,6 +25,8 @@ const ArticlePage = () => {
 
   React.useEffect(() => {
     const loadData = async () => {
+      seIsLoading(true);
+
       const articleDataApi = await getArticleBySlug(slug);
   
       setArticle(articleDataApi.data[0].attributes);
@@ -47,8 +49,8 @@ const ArticlePage = () => {
       <Header />
 
       <PageTitle 
-            breadcrumbsTitle={article?.categories.data[0].attributes.name || ''}
-            breadcrumbsUrl={article?.categories.data[0].attributes.slug || ''}
+            breadcrumbsTitle={article?.tags.data[0].attributes.name || ''}
+            breadcrumbsUrl={article?.tags.data[0].attributes.slug || ''}
       />
 
       <main className='main'>

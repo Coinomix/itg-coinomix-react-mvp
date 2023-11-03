@@ -1,0 +1,100 @@
+@import '../../assets/styles/scss/mixins';
+
+.latest-news {
+  margin: 40px 120px;
+
+  @include onDesktopMedium {
+    margin: 0 40px;
+  }
+
+  @include onDesktopMedium {
+    margin: 0 20px;
+  }
+
+  @include onPhone {
+    margin: 0 14px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 48px;
+
+    @include onDesktopMedium {
+      gap: 20px;
+    }
+
+    @include onPhone {
+      margin-top: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1040px;
+
+    @include onDesktopMedium {
+      gap: 28px;
+    }
+    
+    @include onTablet {
+      gap: 24px;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__tab {
+    color: #9D9D9D;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 138%; /* 27.6px */
+
+    &:hover {
+      color:#FAFAFA;
+    }
+
+    &-active {
+      color: #FAFAFA;
+      padding: 0 8px;
+      border-bottom: 1px solid #FAFAFA;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 600px;
+    min-width: 450px;
+    max-height: 550px;
+
+    @include onDesktopMedium {
+      gap: 28px;
+      width: 400px;
+      min-width: 350px;
+      max-height: 500px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

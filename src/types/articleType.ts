@@ -7,17 +7,17 @@ export interface ArticleData {
   attributes: ArticleAttributes;
 }
 
-export interface ArticleCaregory {
-  data: ArticleCaregoryData[];
+export interface Tag {
+  data: TagData[];
 }
 
-export interface ArticleCaregoryData {
+export interface TagData {
   id: number,
   attributes: {
     name: string;
     slug: string;
-    description: string;
-    locale: string;
+    range: number;
+    homepage: boolean;
   }
 }
 
@@ -29,7 +29,6 @@ export interface ArticleAttributes {
   top_home: boolean;
   publishedAt: string;
   publish_date: string;
-  locale: string;
   image: {
     data: {
       id: number;
@@ -52,15 +51,14 @@ export interface ArticleAttributes {
       }
     }
   }
-  categories: {
-    data: ArticleCaregoryData[];
+  tags: {
+    data: TagData[];
   }
   author: {
     data: {
       id: number;
       attributes: {
         name: string;
-        locale: string;
       }
     }
   };

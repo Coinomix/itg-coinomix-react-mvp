@@ -22,7 +22,7 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
         {articles.map(article => {
           return (
             <div key={article.id} className='latestnews__item'>
-            <Link to={`/${article.attributes.categories.data[0].attributes.slug}/${article.attributes.slug}`} className='latestnews__item-link'>
+            <Link to={`/${article.attributes.tags.data[0].attributes.slug}/${article.attributes.slug}`} className='latestnews__item-link'>
               <h2 className='latestnews__item-title'>{article.attributes.title}</h2>
             </Link>
             <p className='latestnews__item-description'>{article.attributes.description}</p>

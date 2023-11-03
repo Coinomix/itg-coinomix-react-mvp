@@ -23,7 +23,7 @@ export const CardNews: React.FC<Props> = ({
   const imageArticle = imgUrl ? imgUrl : article.image.data.attributes.url;
 
   return (
-    <Link to={`/${article.categories.data[0].attributes.slug}/${article.slug}`} >
+    <Link to={`/${article.tags.data[0].attributes.slug}/${article.slug}`} >
       <div className='cardnews' style={{ height: type }}>
         {imageArticle && (
           <img
@@ -34,7 +34,7 @@ export const CardNews: React.FC<Props> = ({
         )}
         <div className='cardnews__content'>
           <div className='cardnews__header'>
-            <CardTags categories={article.categories.data} />
+            <CardTags tags={article.tags.data} />
 
             <div className={classNames('cardnews__title', {
             'cardnews__title-top': type === CardNewsType.top,

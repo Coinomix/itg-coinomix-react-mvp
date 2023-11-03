@@ -1,18 +1,23 @@
 import * as React from 'react';
-import '../assets/styles/scss/latest-news-page.scss';
 import { Header } from '../components/Header';
 import { PageTitle } from '../components/PageTitle';
 import useTitle from '../utils/useTitle';
-import { ArticleData } from '../types/articleType';
-import { getArticlesSortedByDate } from '../utils/api_helpers';
+import { ArticleData, TagData } from '../types/articleType';
+import { getArticlesByTagSlug, getTagBySlug } from '../utils/api_helpers';
 import { Loader } from '../components/Loader';
 import LatestNews from '../components/LatestNews/LatestNews';
+import { useParams } from 'react-router-dom';
 
-const LatestNewsPage = () => {
+const TagPage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
+  const [tagData, setTagData] = React.useState<TagData>();
   const [isLoading, seIsLoading] = React.useState(true);
 
-  useTitle('Latest News Page | Coinomix');
+  let { tag } = useParams();
+
+  const tagName = tagData?.attributes.name;
+
+  useTitle(tagName || tag || '');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,9 +26,13 @@ const LatestNewsPage = () => {
   const loadData = async () => {
     seIsLoading(true);
 
-    const articlesDataApi = await getArticlesSortedByDate();
+    if (tag) {
+      const tagDataApi = await getTagBySlug(tag);
+      const articlesDataApi = await getArticlesByTagSlug(tag);
 
-    setArticles(articlesDataApi.data);
+      setTagData(tagDataApi.data[0]);
+      setArticles(articlesDataApi.data);
+    }
 
     seIsLoading(false);
   };
@@ -31,7 +40,7 @@ const LatestNewsPage = () => {
   React.useEffect(() => {
     scrollToTop();
     loadData();
-  }, []);
+  }, [tag]);
 
   if (isLoading) {
     return (
@@ -44,7 +53,7 @@ const LatestNewsPage = () => {
       <Header />
 
       <PageTitle
-          title='Latest news'
+          title={tagName}
       />
 
       <LatestNews articles={articles} />
@@ -52,4 +61,4 @@ const LatestNewsPage = () => {
   );
 };
 
-export default LatestNewsPage;
+export default TagPage;
