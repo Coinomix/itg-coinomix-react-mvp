@@ -2,11 +2,11 @@
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
     position: fixed;
-    padding: 34px 40px;
+    padding: 24px 40px;
     width: 100%;
     top: 0;
     left: 0;
@@ -16,12 +16,12 @@
     background-color: rgba(15, 15, 15, 0.6);
     
     @include onPhone {
-      padding: 20px 14px;
+      padding: 14px;
     }
   
     &__burger {
-      height: 48px;
-      width: 48px;
+      height: 40px;
+      width: 40px;
       padding: 0;
       background-color: transparent;
       background-image: url('../../assets/images/header/burger.svg');
@@ -60,8 +60,8 @@
     }
 
     &__user-photo {
-        height: 40px;
-        width: 40px;
+        height: 48px;
+        width: 48px;
         border: 2px solid transparent;
         border-radius: 50%;
 

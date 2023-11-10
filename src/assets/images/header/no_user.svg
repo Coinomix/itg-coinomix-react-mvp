@@ -1,7 +1,12 @@
-<svg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
-<g id='not user'>
-<path id='Rectangle 1' d='M6 24C6 14.0589 14.0589 6 24 6C33.9411 6 42 14.0589 42 24C42 33.9411 33.9411 42 24 42C14.0589 42 6 33.9411 6 24Z' fill='#FAFAFA' stroke='#FAFAFA' stroke-width='4'/>
-<circle id='Ellipse 46' cx='24' cy='20' r='8' fill='#0F0F0F'/>
-<path id='Intersect' fill-rule='evenodd' clip-rule='evenodd' d='M36.5394 36.6559C36.5959 36.7532 36.5783 36.8762 36.4973 36.9544C33.2598 40.0784 28.8542 42 23.9999 42C19.1462 42 14.7412 40.0789 11.5038 36.9556C11.4228 36.8775 11.4051 36.7545 11.4616 36.6572C13.7546 32.7111 18.5084 30 24.0009 30C29.4928 30 34.2461 32.7105 36.5394 36.6559Z' fill='#0F0F0F'/>
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_50_22)">
+<rect width="100" height="100" fill="white"/>
+<circle cx="49.2913" cy="42.2222" r="22.2222" fill="#0F0F0F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M88.0979 117.434C88.1035 117.546 88.0426 117.65 87.9416 117.698C81.2571 120.833 71.2708 120.833 54.8473 120.833H43.7362C27.3173 120.833 17.3319 120.833 10.6475 117.7C10.5464 117.653 10.4855 117.548 10.4911 117.437C11.8278 90.9459 28.6898 69.9997 49.2946 69.9997C69.8986 69.9997 86.7602 90.9446 88.0979 117.434Z" fill="#0F0F0F"/>
 </g>
+<defs>
+<clipPath id="clip0_50_22">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
 </svg>

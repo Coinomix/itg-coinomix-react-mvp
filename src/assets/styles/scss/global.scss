@@ -1,3 +1,5 @@
+@import './mixins';
+
 html {
   font-family: Inter;
   font-size: 20px;
@@ -6,6 +8,14 @@ html {
   line-height: normal; /* 18px */
   color: #fff;
   box-sizing: border-box;
+
+  @include onTablet {
+    font-size: 16px;
+  }
+
+  @include onPhone {
+    font-size: 12px;
+  }
 }
 
 body {

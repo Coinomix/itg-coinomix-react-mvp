@@ -8,7 +8,7 @@ import { CardBanner } from '../components/CardBanner';
 import { Devider } from '../components/Devider';
 import { CardNewsType } from '../types/enums';
 import { TagData, ArticleData } from '../types/articleType';
-import { getArticlesSortedByDate, getTags } from '../utils/api_helpers';
+import { getArticlesSortedByDate, getTagsHomePage } from '../utils/api_helpers';
 import { Loader } from '../components/Loader';
 import bannerEpicurus from '../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../assets/images/banners/banner_itg.svg';
@@ -17,7 +17,7 @@ import { BlockTagNewsHome } from '../components/BlockTagNewsHome/BlockTagNewsHom
 
 export const HomePage = () => {
   const [articles, setArticles] = React.useState<ArticleData[]>([]);
-  const [tags, settags] = React.useState<TagData[]>([]);
+  const [tags, setTags] = React.useState<TagData[]>([]);
   const [isLoading, seIsLoading] = React.useState(true);
 
   useTitle('Home Page | Coinomix');
@@ -30,10 +30,10 @@ export const HomePage = () => {
     seIsLoading(true);
 
     const articlesDataApi = await getArticlesSortedByDate();
-    const tagsDataApi = await getTags();
+    const tagsDataApi = await getTagsHomePage();
 
     setArticles(articlesDataApi.data);
-    settags(tagsDataApi.data);
+    setTags(tagsDataApi.data);
 
     seIsLoading(false);
   };
@@ -80,7 +80,7 @@ export const HomePage = () => {
 
           <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
 
-          {tags.slice(0, 5).map((tag) => (
+          {tags && tags.map((tag) => (
             <BlockTagNewsHome tag={tag} />
           ))}
 

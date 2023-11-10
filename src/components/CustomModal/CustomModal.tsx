@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './CustomModal.scss';
-import { SignIn } from './SignIn';
+import { SignInModal } from './SignInModal';
 import { SignUp } from './SignUp';
 import { ForgotPassword } from './ForgotPassword';
 import { ModalType } from '../../types/enums';
@@ -41,7 +41,7 @@ export const CustomModal: React.FC<Props> = ({ show, onHide, onOpen }) => {
         </div>
         <div className='custommodal__content'>
           {(show === ModalType.signin) &&
-            <SignIn onOpen={onOpen} />
+            <SignInModal onOpen={onOpen} />
           }
           {(show === ModalType.signup) &&
             <SignUp onOpen={onOpen} />

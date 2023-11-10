@@ -8,7 +8,7 @@ interface Props {
   onOpen: (type: ModalType) => void,
 }
 
-export const SignIn: React.FC<Props> = ({ onOpen }) => {
+export const SignInModal: React.FC<Props> = ({ onOpen }) => {
   return (
     <div className='signin'>
       <div className='signin__title'>

@@ -9,6 +9,8 @@ import { ArticleAttributes } from '../types/articleType';
 import { Loader } from '../components/Loader';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { CardTags } from '../components/CardTags';
+import { formateDate } from '../utils/helpers';
 
 const ArticlePage = () => {
   const [article, setArticle] = React.useState<ArticleAttributes>();
@@ -22,6 +24,7 @@ const ArticlePage = () => {
   };
 
   const imageUrl = article?.image.data.attributes.url;
+  const publishData = formateDate(article?.publish_date || '');
 
   React.useEffect(() => {
     const loadData = async () => {
@@ -58,7 +61,24 @@ const ArticlePage = () => {
 
           <h1 className='article__title'>{article?.title}</h1>
 
-          <img src={imageUrl} alt={article?.title} className='article__image' />
+          <div className='article__imagewrapper'>
+            <img src={imageUrl} alt={article?.title} className='article__image' />
+
+            <div className='cardnews__content'>
+            <div className='cardnews__header'>
+              <CardTags tags={article?.tags.data} isArrow={false} />
+            </div>
+
+            <div className='cardnews__footer'>
+              <ul className='cardnews__author'>
+                <li>
+                  <span className='cardnews__author-link'>{`by ${article?.author.data.attributes.name}`}</span>
+                </li>
+                <li>{publishData}</li>
+              </ul>
+            </div>
+            </div>
+          </div>
 
           <div className='article__content'>
             <Markdown remarkPlugins={[remarkGfm]} components={{

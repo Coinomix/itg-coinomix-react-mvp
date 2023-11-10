@@ -1,0 +1,31 @@
+.btn-close {
+  --bs-btn-close-focus-shadow: none;
+  // --bs-btn-close-bg: url('../../images/cross.svg');
+  --bs-btn-close-opacity: 1;
+}
+
+[data-bs-theme=dark] .accordion-button::after {
+  --bs-accordion-btn-icon: url('../../images/down.svg'); 
+  --bs-accordion-btn-active-icon: url('../../images/down.svg');
+  --bs-accordion-btn-color: #fff;
+}
+
+.sidemunuaccordion {
+  --bs-accordion-btn-padding-x: 1rem;
+  --bs-accordion-btn-padding-y: 0.5rem;
+  --bs-accordion-btn-icon-width: 1.25rem;
+  --bs-accordion-btn-icon-transform: rotate(-180deg);
+  --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+
+  --bs-accordion-body-padding-x: 1.25rem;
+  --bs-accordion-body-padding-y: 1rem;
+}
+
+.accordion-button {
+  color: #fff;
+}
+
+.accordion-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
