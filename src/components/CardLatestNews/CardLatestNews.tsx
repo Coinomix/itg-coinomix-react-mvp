@@ -9,7 +9,7 @@ interface Props {
   article: ArticleData;
 }
 
-export const CardLatestNews: React.FC<Props> = ({ article }) => {
+export const CardLatestNews: React.FC<Props> = React.memo(({ article }) => {
   const articleData = article.attributes;
   const articleUrl = `/${articleData.tags.data[0].attributes.slug}/${articleData.slug}`;
 
@@ -46,5 +46,5 @@ export const CardLatestNews: React.FC<Props> = ({ article }) => {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+});

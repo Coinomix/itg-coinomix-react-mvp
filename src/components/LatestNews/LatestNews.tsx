@@ -5,13 +5,12 @@ import { CardBanner } from '../CardBanner';
 import bannerEpicurus from '../../assets/images/banners/banner_epicurus.png';
 import bannerItg from '../../assets/images/banners/banner_itg.svg';
 import { ArticleData } from '../../types/articleType';
-import { Loader } from '../Loader';
 
 interface Props {
   articles: ArticleData[];
 };
 
-const LatestNews: React.FC <Props> = ({ articles }) => {
+const LatestNews: React.FC <Props> = React.memo(({ articles }) => {
   return (
       <main className='latest-news-page'>
         <div className='latest-news-page__container'>
@@ -33,6 +32,6 @@ const LatestNews: React.FC <Props> = ({ articles }) => {
         </div> 
       </main>
   );
-};
+});
 
 export default LatestNews;

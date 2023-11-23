@@ -9,7 +9,7 @@ interface Props {
   imgAlt?: string;
 }
 
-export const CardBanner: React.FC<Props> = ({ 
+export const CardBanner: React.FC<Props> = React.memo(({ 
   imgUrl,
   height,
   link = '',
@@ -18,7 +18,7 @@ export const CardBanner: React.FC<Props> = ({
   return (
     <div className='cardbanner' style={{ height }}>
       {imgUrl && link && (
-        <Link to={`https://${link}`}>
+        <Link to={`https://${link}`} >
           <img
             src={imgUrl}
             className='cardbanner__image'
@@ -31,9 +31,9 @@ export const CardBanner: React.FC<Props> = ({
         <img
           src={imgUrl}
           className='cardbanner__image'
-          alt=''
+          alt={imgAlt}
         />
       )}
     </div>
   );
-};
+});

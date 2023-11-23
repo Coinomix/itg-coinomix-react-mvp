@@ -78,7 +78,7 @@ export const HomePage = () => {
 
           <Devider />
 
-          <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' />
+          <CardBanner imgUrl={bannerEpicurus} link='epicurus.io' imgAlt='Epicurus' />
 
           {tags && tags.map((tag) => (
             <BlockTagNewsHome tag={tag} />
@@ -90,7 +90,7 @@ export const HomePage = () => {
 
           <Devider />
 
-          <CardBanner imgUrl={bannerItg} link='itg-investments.com' />
+          <CardBanner imgUrl={bannerItg} link='itg-investments.com' imgAlt='ITG' />
         </div>
       </main>
 

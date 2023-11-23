@@ -9,7 +9,7 @@ interface Props {
   article: ArticleData;
 }
 
-export const CardNewsSmall: React.FC<Props> = ({
+export const CardNewsSmall: React.FC<Props> = React.memo(({
   imgUrl,
   article,
 }) => {
@@ -39,4 +39,4 @@ export const CardNewsSmall: React.FC<Props> = ({
       </div>
     </Link>
   );
-};
+});

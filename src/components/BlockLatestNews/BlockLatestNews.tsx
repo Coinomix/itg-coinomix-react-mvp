@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import './BlockLatestNews.scss';
 import arrowIcon from '../../assets/images/arrow_icon.svg';
@@ -8,7 +8,7 @@ interface Props {
   articles: ArticleData[];
 }
 
-export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
+export const BlockLatestNews: React.FC<Props> = memo(({ articles }) => {
   return (
     <div className='latestnews'>
       <div className='latestnews__header'>
@@ -34,4 +34,4 @@ export const BlockLatestNews: React.FC<Props> = ({ articles }) => {
 
     </div>
   );
-};
+});

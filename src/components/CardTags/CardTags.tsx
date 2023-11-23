@@ -9,7 +9,7 @@ interface Props {
   tags?: TagData[];
 }
 
-export const CardTags: React.FC<Props> = ({ isArrow = true, tags }) => {
+export const CardTags: React.FC<Props> = React.memo(({ isArrow = true, tags }) => {
   return (
     <div className='cardtags'>
       <div className='cardtags__tags'>
@@ -23,4 +23,4 @@ export const CardTags: React.FC<Props> = ({ isArrow = true, tags }) => {
       )}
     </div>
   );
-};
+});
