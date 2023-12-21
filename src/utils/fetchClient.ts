@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-const API_KEY = process.env.STRAPI_API_TOKEN;
-const API_URL = 'https://strapi-deployment-production.up.railway.app/api';
+const API_KEY = process.env.REACT_APP_STRAPI_API_TOKEN;
+const API_URL = process.env.REACT_APP_STRAPI_API_URL;
+// const API_URL = 'https://strapi-deployment-production.up.railway.app/api';
 // const API_URL = 'https://strapi-deployment-9fmb.onrender.com/api';
 // const API_URL = 'http://localhost:1337/api';
 // const API_URL = process.env.STRAPI_API_URL;
@@ -13,14 +14,16 @@ function request<T>(
   method: RequestMethod = 'GET',
   data: any = null,
 ): Promise<T> {
-  const options: RequestInit = { method };
+  const options: RequestInit = { 
+    method,
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': `Bearer ${API_KEY}`,
+    },
+   };
 
   if (data) {
     options.body = JSON.stringify(data);
-    options.headers = {
-      'Content-Type': 'application/json; charset=UTF-8',
-      'Authorization': `Bearer ${API_KEY}`,
-    };
   }
 
   return fetch(API_URL + url, options)
